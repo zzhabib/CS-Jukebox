@@ -34,9 +34,28 @@ namespace CS_Jukebox
 
         private void okButton_Click(object sender, EventArgs e)
         {
-            if (CheckDir(Properties.GameDir))
+            if (dirValid)
             {
+                CreateConfig();
                 Close();
+            }
+        }
+
+        private void CreateConfig()
+        {
+            string configPath = Properties.GameDir + Properties.ConfigPath;
+            string root = Directory.GetCurrentDirectory();
+            string configSrc = root + Properties.ConfigName;
+
+            if (File.Exists(configPath))
+            {
+                //File.Replace(configSrc, configPath, root + @"\configbackup.cfg");
+                File.Delete(configPath);
+                File.Copy(configSrc, configPath);
+            }
+            else
+            {
+                File.Copy(configSrc, configPath);
             }
         }
 

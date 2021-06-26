@@ -9,5 +9,8 @@ namespace CS_Jukebox
     static class Properties
     {
         public static string GameDir = null;
+
+        public static readonly string ConfigPath = @"\csgo\cfg\gamestate_integration_jukebox.cfg";
+        public static readonly string ConfigName = @"\gamestate_integration_jukebox.cfg";
     }
 }
