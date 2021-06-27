@@ -20,8 +20,6 @@ namespace CS_Jukebox
         [return: MarshalAs(UnmanagedType.Bool)]
         static extern bool AllocConsole();
 
-        bool dirSelected = false;
-
         private GameStateListener gsl;
 
         public MainForm()
@@ -29,16 +27,19 @@ namespace CS_Jukebox
             InitializeComponent();
             AllocConsole(); //Enable console
 
-            if (!dirSelected)
+            Properties.Load();
+
+            if (Properties.GameDir == null)
             {
                 Form dirPopup = new GamePathForm();
                 dirPopup.Show(this);
             }
+        }
 
-            gsl = new GameStateListener(1337);
-            gsl.NewGameState += OnNewGameState;
-            gsl.RoundBegin += OnRoundBegin;
-            gsl.BombPlanted += OnBombPlanted;
+        void StartGameListener()
+        {
+            gsl = new GameStateListener(5001);
+            gsl.NewGameState += new NewGameStateHandler(OnNewGameState);
 
             if (!gsl.Start())
             {

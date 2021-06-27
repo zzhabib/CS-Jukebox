@@ -15,7 +15,7 @@
 
   <ItemGroup>
     <None Update="gamestate_integration_jukebox.cfg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 

@@ -19,6 +19,7 @@ namespace CS_Jukebox
             InitializeComponent();
         }
 
+        //Open folder browser dialog
         private void browseButton_Click(object sender, EventArgs e)
         {
             if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
@@ -27,20 +28,24 @@ namespace CS_Jukebox
             }
         }
 
+        //Check if the directory is a valid CSGO install
         private bool CheckDir(string path)
         {
             return File.Exists(path + @"\csgo.exe");
         }
 
+        //Saves the directory if it is valid.
         private void okButton_Click(object sender, EventArgs e)
         {
             if (dirValid)
             {
                 CreateConfig();
+                Properties.Save();
                 Close();
             }
         }
 
+        //Copies the config from local folder to CS:GO cfg folder
         private void CreateConfig()
         {
             string configPath = Properties.GameDir + Properties.ConfigPath;
@@ -49,7 +54,6 @@ namespace CS_Jukebox
 
             if (File.Exists(configPath))
             {
-                //File.Replace(configSrc, configPath, root + @"\configbackup.cfg");
                 File.Delete(configPath);
                 File.Copy(configSrc, configPath);
             }
@@ -59,6 +63,7 @@ namespace CS_Jukebox
             }
         }
 
+        //Shows error label based on whether given directory is a valid CS:GO path
         private void dirTextBox_TextChanged(object sender, EventArgs e)
         {
             dirValid = CheckDir(dirTextBox.Text);
