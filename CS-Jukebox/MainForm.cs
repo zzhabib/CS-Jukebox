@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.IO;
 using CSGSI;
 using CSGSI.Events;
+using CSGSI.Nodes;
 using System.Runtime.InteropServices;
 
 namespace CS_Jukebox
@@ -47,7 +48,6 @@ namespace CS_Jukebox
             Properties.CreateConfig();
 
             gsl = new GameStateListener(3000);
-            //gsl = new GameStateListener("http://127.0.0.1:5001/");
             gsl.NewGameState += new NewGameStateHandler(OnNewGameState);
 
             if (!gsl.Start())
@@ -62,16 +62,31 @@ namespace CS_Jukebox
 
         void OnNewGameState(GameState gs)
         {
-            Console.WriteLine("New Game State: ");
-            Console.WriteLine(gs.ToString());
+            //if (gs.Previously.Round.Phase != RoundPhase.Live &&
+            //    gs.Round.Phase == RoundPhase.Live)
+            //{
+            //    OnRoundBegin();
+            //}
+
+            if (gs.Previously.Round.Phase == RoundPhase.FreezeTime &&
+                gs.Round.Phase == RoundPhase.Live)
+            {
+                OnRoundBegin();
+            }
+
+            if (gs.Previously.Bomb.State == BombState.Planting &&
+                gs.Bomb.State == BombState.Planted)
+            {
+                OnBombPlanted();
+            }
         }
 
-        void OnRoundBegin(RoundBeginEventArgs e)
+        void OnRoundBegin()
         {
             Console.WriteLine("Round begun.");
         }
 
-        void OnBombPlanted(BombPlantedEventArgs e)
+        void OnBombPlanted()
         {
             Console.WriteLine("Bomb has been planted.");
         }
