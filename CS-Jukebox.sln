@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS-Jukebox", "CS-Jukebox\CS-Jukebox.csproj", "{1EA1BE7A-CBD8-43DA-8070-5B448A7E6B94}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSGSI", "CSGSI\CSGSI.csproj", "{8D55804C-2CF1-4A65-9C3E-8E41CD809535}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{1EA1BE7A-CBD8-43DA-8070-5B448A7E6B94}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1EA1BE7A-CBD8-43DA-8070-5B448A7E6B94}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1EA1BE7A-CBD8-43DA-8070-5B448A7E6B94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D55804C-2CF1-4A65-9C3E-8E41CD809535}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D55804C-2CF1-4A65-9C3E-8E41CD809535}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D55804C-2CF1-4A65-9C3E-8E41CD809535}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D55804C-2CF1-4A65-9C3E-8E41CD809535}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

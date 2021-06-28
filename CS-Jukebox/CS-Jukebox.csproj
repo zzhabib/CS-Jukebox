@@ -13,6 +13,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CSGSI\CSGSI.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="gamestate_integration_jukebox.cfg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

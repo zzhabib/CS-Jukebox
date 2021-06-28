@@ -44,6 +44,8 @@ namespace CS_Jukebox
 
         void StartGameListener()
         {
+            Properties.CreateConfig();
+
             gsl = new GameStateListener(3000);
             //gsl = new GameStateListener("http://127.0.0.1:5001/");
             gsl.NewGameState += new NewGameStateHandler(OnNewGameState);

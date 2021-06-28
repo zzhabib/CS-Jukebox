@@ -45,28 +45,10 @@ namespace CS_Jukebox
         {
             if (dirValid)
             {
-                CreateConfig();
+                //CreateConfig();
                 Properties.Save();
                 startHandler.Invoke();  //Invoke the method that starts GameStateListener
                 Close();
-            }
-        }
-
-        //Copies the config from local folder to CS:GO cfg folder
-        private void CreateConfig()
-        {
-            string configPath = Properties.GameDir + Properties.ConfigPath;
-            string root = Directory.GetCurrentDirectory();
-            string configSrc = root + Properties.ConfigName;
-
-            if (File.Exists(configPath))
-            {
-                File.Delete(configPath);
-                File.Copy(configSrc, configPath);
-            }
-            else
-            {
-                File.Copy(configSrc, configPath);
             }
         }
 

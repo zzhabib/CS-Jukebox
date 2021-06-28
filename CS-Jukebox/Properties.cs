@@ -51,6 +51,24 @@ namespace CS_Jukebox
             }
         }
 
+        //Copies the config from local folder to CS:GO cfg folder
+        public static void CreateConfig()
+        {
+            string configPath = Properties.GameDir + Properties.ConfigPath;
+            string root = Directory.GetCurrentDirectory();
+            string configSrc = root + Properties.ConfigName;
+
+            if (File.Exists(configPath))
+            {
+                File.Delete(configPath);
+                File.Copy(configSrc, configPath);
+            }
+            else
+            {
+                File.Copy(configSrc, configPath);
+            }
+        }
+
         //Inner class for properties parameters
         private class PropertiesFile
         {
