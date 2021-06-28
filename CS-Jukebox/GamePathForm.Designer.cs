@@ -98,7 +98,7 @@ namespace CS_Jukebox
             this.Controls.Add(this.dirTextBox);
             this.Controls.Add(this.label1);
             this.Name = "GamePathForm";
-            this.Text = "GamePathForm";
+            this.Text = "Select Game Directory";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -47,7 +47,7 @@ namespace CS_Jukebox
             this.ClientSize = new System.Drawing.Size(285, 449);
             this.Controls.Add(this.richTextBox1);
             this.Name = "MainForm";
-            this.Text = "Form1";
+            this.Text = "CS Jukebox";
             this.ResumeLayout(false);
 
         }

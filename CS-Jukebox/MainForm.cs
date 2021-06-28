@@ -28,17 +28,24 @@ namespace CS_Jukebox
             AllocConsole(); //Enable console
 
             Properties.Load();
-
+            
+            //If game directory is not set, create
+            //popup so that user can browse to it.
             if (Properties.GameDir == null)
             {
-                Form dirPopup = new GamePathForm();
+                Form dirPopup = new GamePathForm(StartGameListener); //Pass method to start game listener
                 dirPopup.Show(this);
+            }
+            else
+            {
+                StartGameListener();
             }
         }
 
         void StartGameListener()
         {
-            gsl = new GameStateListener(5001);
+            gsl = new GameStateListener(3000);
+            //gsl = new GameStateListener("http://127.0.0.1:5001/");
             gsl.NewGameState += new NewGameStateHandler(OnNewGameState);
 
             if (!gsl.Start())
