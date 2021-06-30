@@ -62,23 +62,8 @@ namespace CS_Jukebox
 
         void OnNewGameState(GameState gs)
         {
-            //if (gs.Previously.Round.Phase != RoundPhase.Live &&
-            //    gs.Round.Phase == RoundPhase.Live)
-            //{
-            //    OnRoundBegin();
-            //}
-
-            if (gs.Previously.Round.Phase == RoundPhase.FreezeTime &&
-                gs.Round.Phase == RoundPhase.Live)
-            {
-                OnRoundBegin();
-            }
-
-            if (gs.Previously.Bomb.State == BombState.Planting &&
-                gs.Bomb.State == BombState.Planted)
-            {
-                OnBombPlanted();
-            }
+            Console.WriteLine("Round phase: " + gs.Round.Phase.ToString());
+            Console.WriteLine("Bomb Status: " + gs.Round.Bomb.ToString());
         }
 
         void OnRoundBegin()
