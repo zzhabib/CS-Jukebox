@@ -22,6 +22,7 @@ namespace CS_Jukebox
         static extern bool AllocConsole();
 
         private GameStateListener gsl;
+        private MusicState musicState = MusicState.None;
 
         public MainForm()
         {
@@ -62,8 +63,31 @@ namespace CS_Jukebox
 
         void OnNewGameState(GameState gs)
         {
-            Console.WriteLine("Round phase: " + gs.Round.Phase.ToString());
-            Console.WriteLine("Bomb Status: " + gs.Round.Bomb.ToString());
+            if (gs.Round.Phase == RoundPhase.FreezeTime && musicState != MusicState.FreezeTime)
+            {
+                musicState = MusicState.FreezeTime;
+                Console.WriteLine("FreezeTime Begun");
+            }
+
+            if (gs.Round.Phase == RoundPhase.Live && musicState != MusicState.Live && musicState != MusicState.BombPlanted)
+            {
+                musicState = MusicState.Live;
+                Console.WriteLine("Round Begun");
+            }
+
+            if (gs.Round.Phase == RoundPhase.Over && musicState != MusicState.Over)
+            {
+                musicState = MusicState.Over;
+                Console.WriteLine("Round over");
+            }
+
+            if (gs.Round.Bomb == BombState.Planted && musicState != MusicState.BombPlanted)
+            {
+                musicState = MusicState.BombPlanted;
+                Console.WriteLine("Bomb Planted");
+            }
+
+            //Todo: ignore music states until first freezetime. Reset this condition when reaching the main menu.
         }
 
         void OnRoundBegin()
@@ -75,5 +99,14 @@ namespace CS_Jukebox
         {
             Console.WriteLine("Bomb has been planted.");
         }
+    }
+
+    public enum MusicState
+    {
+        None,
+        FreezeTime,
+        Live,
+        BombPlanted,
+        Over
     }
 }
