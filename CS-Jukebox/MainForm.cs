@@ -24,6 +24,7 @@ namespace CS_Jukebox
         private GameStateListener gsl;
         private MusicState musicState = MusicState.None;
         private bool playMusic = false;
+        private Jukebox jukebox;
 
         public MainForm()
         {
@@ -31,6 +32,8 @@ namespace CS_Jukebox
             AllocConsole(); //Enable console
 
             Properties.Load();
+
+            jukebox = new Jukebox();
             
             //If game directory is not set, create
             //popup so that user can browse to it.
@@ -107,6 +110,20 @@ namespace CS_Jukebox
         void OnBombPlanted()
         {
             Console.WriteLine("Bomb has been planted.");
+        }
+
+        private void browseBtn_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                jukebox.PlaySong(openFileDialog1.FileName);
+                textBox1.Text = openFileDialog1.FileName;
+            }
+        }
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            jukebox.SetVolume(trackBar1.Value * 10);
         }
     }
 
