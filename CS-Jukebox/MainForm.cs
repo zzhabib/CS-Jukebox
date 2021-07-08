@@ -64,19 +64,19 @@ namespace CS_Jukebox
 
         void OnNewGameState(GameState gs)
         {
-            if (gs.Map.JSON.Equals("{}"))
+            if (gs.Map.JSON.Equals("{}") && musicState != MusicState.Menu)
             {
-                playMusic = false;
+                musicState = MusicState.Menu;
+                Console.WriteLine("Main Menu");
             }
 
             if (gs.Round.Phase == RoundPhase.FreezeTime && musicState != MusicState.FreezeTime)
             {
                 musicState = MusicState.FreezeTime;
-                playMusic = true;
                 Console.WriteLine("FreezeTime Begun");
             }
 
-            if (!playMusic) return;
+            if (musicState == MusicState.Menu) return;
 
             if (gs.Round.Phase == RoundPhase.Live && musicState != MusicState.Live && musicState != MusicState.BombPlanted)
             {
@@ -113,6 +113,7 @@ namespace CS_Jukebox
     public enum MusicState
     {
         None,
+        Menu,
         FreezeTime,
         Live,
         BombPlanted,
