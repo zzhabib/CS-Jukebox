@@ -23,6 +23,7 @@ namespace CS_Jukebox
 
         private GameStateListener gsl;
         private MusicState musicState = MusicState.None;
+        private bool playMusic = false;
 
         public MainForm()
         {
@@ -63,11 +64,19 @@ namespace CS_Jukebox
 
         void OnNewGameState(GameState gs)
         {
+            if (gs.Map.JSON.Equals("{}"))
+            {
+                playMusic = false;
+            }
+
             if (gs.Round.Phase == RoundPhase.FreezeTime && musicState != MusicState.FreezeTime)
             {
                 musicState = MusicState.FreezeTime;
+                playMusic = true;
                 Console.WriteLine("FreezeTime Begun");
             }
+
+            if (!playMusic) return;
 
             if (gs.Round.Phase == RoundPhase.Live && musicState != MusicState.Live && musicState != MusicState.BombPlanted)
             {
