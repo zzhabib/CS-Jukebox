@@ -66,8 +66,6 @@ namespace CS_Jukebox
                 musicState = MusicState.BombPlanted;
                 Console.WriteLine("Bomb Planted");
             }
-
-            //Todo: ignore music states until first freezetime. Reset this condition when reaching the main menu.
         }
     }
 
