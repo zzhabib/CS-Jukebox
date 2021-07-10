@@ -12,6 +12,7 @@ namespace CS_Jukebox
 {
     public partial class MusicSelector : Form
     {
+
         public MusicSelector()
         {
             InitializeComponent();

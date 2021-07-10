@@ -33,6 +33,9 @@ namespace CS_Jukebox
             this.browseBtn = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.musicComboBox = new System.Windows.Forms.ComboBox();
+            this.addButton = new System.Windows.Forms.Button();
+            this.settingsButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,11 +69,42 @@ namespace CS_Jukebox
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // musicComboBox
+            // 
+            this.musicComboBox.FormattingEnabled = true;
+            this.musicComboBox.Location = new System.Drawing.Point(79, 12);
+            this.musicComboBox.Name = "musicComboBox";
+            this.musicComboBox.Size = new System.Drawing.Size(121, 23);
+            this.musicComboBox.TabIndex = 3;
+            this.musicComboBox.Tag = "";
+            this.musicComboBox.Text = "Music Kit";
+            // 
+            // addButton
+            // 
+            this.addButton.Location = new System.Drawing.Point(12, 12);
+            this.addButton.Name = "addButton";
+            this.addButton.Size = new System.Drawing.Size(51, 23);
+            this.addButton.TabIndex = 4;
+            this.addButton.Text = "Add";
+            this.addButton.UseVisualStyleBackColor = true;
+            // 
+            // settingsButton
+            // 
+            this.settingsButton.Location = new System.Drawing.Point(215, 12);
+            this.settingsButton.Name = "settingsButton";
+            this.settingsButton.Size = new System.Drawing.Size(58, 23);
+            this.settingsButton.TabIndex = 5;
+            this.settingsButton.Text = "Settings";
+            this.settingsButton.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(285, 449);
+            this.Controls.Add(this.settingsButton);
+            this.Controls.Add(this.addButton);
+            this.Controls.Add(this.musicComboBox);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.browseBtn);
             this.Controls.Add(this.trackBar1);
@@ -87,6 +121,9 @@ namespace CS_Jukebox
         private System.Windows.Forms.Button browseBtn;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.ComboBox musicComboBox;
+        private System.Windows.Forms.Button addButton;
+        private System.Windows.Forms.Button settingsButton;
     }
 }
 

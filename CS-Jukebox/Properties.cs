@@ -12,13 +12,17 @@ namespace CS_Jukebox
     static class Properties
     {
         public static string GameDir = null;
+        public static List<MusicKit> MusicKits = null;
+        public static MusicKit SelectedKit = null;
 
         public static readonly string ConfigPath = @"\csgo\cfg\gamestate_integration_jukebox.cfg";
         public static readonly string ConfigName = @"\gamestate_integration_jukebox.cfg";
         public static readonly string PropertiesFilePath = @"\properties.json";
 
+        public static readonly string MusicKitsPath = @"\kits";
+
         //Converts settings to json file then saves it
-        public static void Save()
+        public static void SaveProperties()
         {
             string dir = Directory.GetCurrentDirectory() + PropertiesFilePath;
 
@@ -33,8 +37,22 @@ namespace CS_Jukebox
             File.WriteAllText(dir, jsonFile);
         }
 
-        //Reads properties file then deserializes it
+        //Calls all load methods
         public static void Load()
+        {
+            LoadProperties();
+            LoadKits();
+        }
+
+        //Calls all save methods
+        public static void Save()
+        {
+            SaveProperties();
+            SaveKits();
+        }
+
+        //Reads properties file then deserializes it
+        public static void LoadProperties()
         {
             string dir = Directory.GetCurrentDirectory() + PropertiesFilePath;
             PropertiesFile propFile;
@@ -69,11 +87,61 @@ namespace CS_Jukebox
             }
         }
 
+        public static void SaveKits()
+        {
+            string dir = Directory.GetCurrentDirectory() + MusicKitsPath;
+
+            Directory.CreateDirectory(dir);
+            
+            foreach (MusicKit musicKit in MusicKits)
+            {
+                string kitDir = dir + @"\" + musicKit.Name + ".json";
+                string jsonFile = JsonConvert.SerializeObject(musicKit);
+                File.WriteAllText(kitDir, jsonFile);
+            }
+        }
+
+        public static void LoadKits()
+        {
+            string dir = Directory.GetCurrentDirectory() + MusicKitsPath;
+            MusicKits = new List<MusicKit>();
+
+            if (Directory.Exists(dir))
+            {
+                foreach (string fileName in Directory.GetFiles(dir))
+                {
+                    if (!fileName.EndsWith(".json")) continue;
+                    string filePath = dir + @"\" + fileName;
+                    string jsonFile = "";
+
+                    try
+                    {
+                        jsonFile = File.ReadAllText(filePath);
+                        
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine("Exception when trying to load music kits.");
+                        Console.WriteLine(e.StackTrace);
+                    }
+                    finally
+                    {
+                        MusicKit musicKit = JsonConvert.DeserializeObject<MusicKit>(jsonFile);
+                        MusicKits.Add(musicKit);
+                    }
+                }
+            }
+            else
+            {
+                Directory.CreateDirectory(dir);
+            }
+        }
+
         //Inner class for properties parameters
         private class PropertiesFile
         {
-            
             public string GameDir;
+            public MusicKit selectedKit;
         }
     }
 }

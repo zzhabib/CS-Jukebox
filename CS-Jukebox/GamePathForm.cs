@@ -46,7 +46,7 @@ namespace CS_Jukebox
             if (dirValid)
             {
                 //CreateConfig();
-                Properties.Save();
+                Properties.SaveProperties();
                 startHandler.Invoke();  //Invoke the method that starts GameStateListener
                 Close();
             }
