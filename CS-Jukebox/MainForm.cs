@@ -36,13 +36,23 @@ namespace CS_Jukebox
             //popup so that user can browse to it.
             if (Properties.GameDir == null)
             {
-                Form dirPopup = new GamePathForm(SetupGameListener); //Pass method to start game listener
+                Form dirPopup = new GamePathForm(Start); //Pass method to start game listener
                 dirPopup.Show(this);
             }
             else
             {
-                SetupGameListener();
+                Start();
             }
+        }
+
+        void Start()
+        {
+            if (Properties.MusicKits.Count > 0)
+            {
+                musicComboBox.
+            }
+
+            SetupGameListener();
         }
 
         void SetupGameListener()

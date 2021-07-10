@@ -14,6 +14,7 @@ namespace CS_Jukebox
         public static string GameDir = null;
         public static List<MusicKit> MusicKits = null;
         public static MusicKit SelectedKit = null;
+        private static string SelectedKitName = null;
 
         public static readonly string ConfigPath = @"\csgo\cfg\gamestate_integration_jukebox.cfg";
         public static readonly string ConfigName = @"\gamestate_integration_jukebox.cfg";
@@ -62,6 +63,7 @@ namespace CS_Jukebox
                 string jsonFile = File.ReadAllText(dir);
                 propFile = JsonConvert.DeserializeObject<PropertiesFile>(jsonFile);
                 GameDir = propFile.GameDir;
+                SelectedKitName = propFile.SelectedKitName;
             }
             catch (FileNotFoundException e)
             {
@@ -135,13 +137,25 @@ namespace CS_Jukebox
             {
                 Directory.CreateDirectory(dir);
             }
+
+            //Find a value for SelectedKit if applicable
+            if (MusicKits.Count > 0)
+            {
+                foreach (MusicKit musicKit in MusicKits)
+                {
+                    if (musicKit.Name.Equals(SelectedKitName))
+                    {
+                        SelectedKit = musicKit;
+                    }
+                }
+            }
         }
 
         //Inner class for properties parameters
         private class PropertiesFile
         {
             public string GameDir;
-            public MusicKit selectedKit;
+            public string SelectedKitName;
         }
     }
 }
