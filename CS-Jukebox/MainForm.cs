@@ -47,10 +47,7 @@ namespace CS_Jukebox
 
         void Start()
         {
-            foreach (MusicKit musicKit in Properties.MusicKits)
-            {
-                musicComboBox.Items.Add(musicKit.Name);
-            }
+            CreateKitDropdown();
 
             SetupGameListener();
         }
@@ -59,6 +56,23 @@ namespace CS_Jukebox
         {
             Properties.CreateConfig();
             logic = new GameLogic();
+        }
+
+        //Refreshes controls that contain mutable data
+        void RefreshParameters()
+        {
+            CreateKitDropdown();
+            musicComboBox.SelectedIndex = Properties.MusicKits.IndexOf(Properties.SelectedKit);
+        }
+
+        private void CreateKitDropdown()
+        {
+            musicComboBox.Items.Clear();
+
+            foreach (MusicKit musicKit in Properties.MusicKits)
+            {
+                musicComboBox.Items.Add(musicKit.Name);
+            }
         }
 
         private void browseBtn_Click(object sender, EventArgs e)
@@ -77,8 +91,22 @@ namespace CS_Jukebox
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            Form musicSelector = new MusicSelector();
+            Form musicSelector = new MusicSelector(new MusicKit(), RefreshParameters, true);
             musicSelector.Show(this);
+        }
+
+        private void editButton_Click(object sender, EventArgs e)
+        {
+            if (Properties.SelectedKit != null)
+            {
+                Form musicSelector = new MusicSelector(Properties.SelectedKit, RefreshParameters, false);
+                musicSelector.Show(this);
+            }
+        }
+
+        private void musicComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Properties.SelectedKit = Properties.MusicKits[musicComboBox.SelectedIndex];
         }
     }
 }

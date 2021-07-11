@@ -5,25 +5,45 @@ namespace CS_Jukebox
 {
     public partial class MusicSelector : Form
     {
+        public delegate void RefreshHandler();
 
         MusicKit currentKit = null; //Music kit currently being edited
+        bool createMode = false;
+        RefreshHandler refreshHandler;
 
-        public MusicSelector()
+        //public MusicSelector()
+        //{
+        //    InitializeComponent();
+
+        //    foreach (MusicKit musicKit in Properties.MusicKits)
+        //    {
+        //        musicComboBox.Items.Add(musicKit.Name);
+        //    }
+
+        //    currentKit = Properties.SelectedKit;
+        //    musicComboBox.SelectedItem = currentKit;
+        //}
+
+        public MusicSelector(MusicKit newKit, RefreshHandler refreshHandler, bool? createKit)
         {
             InitializeComponent();
 
-            foreach (MusicKit musicKit in Properties.MusicKits)
-            {
-                musicComboBox.Items.Add(musicKit.Name);
-            }
+            if (createKit.HasValue) createMode = createKit.Value;
 
-            currentKit = Properties.SelectedKit;
-            musicComboBox.SelectedItem = currentKit;
+            currentKit = newKit;
+            this.refreshHandler = refreshHandler;
+
+            LoadKitParameters();
         }
 
         private void MusicSelector_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void LoadKitParameters()
+        {
+            nameTextBox.Text = currentKit.Name;
         }
 
         private void createButton_Click(object sender, EventArgs e)
@@ -36,7 +56,6 @@ namespace CS_Jukebox
             {
                 MusicKit newKit = new MusicKit(nameTextBox.Text);
                 Properties.MusicKits.Add(newKit);
-                musicComboBox.Items.Add(newKit.Name);
                 currentKit = newKit;
             }
         }
@@ -56,9 +75,15 @@ namespace CS_Jukebox
                 currentKit.loseSong = new SongProfile(lostTextBox.Text, lostTrackBar.Value);
                 currentKit.MVPSong = new SongProfile(MVPTextBox.Text, MVPTrackBar.Value);
 
-                //Detect if a music kit was renamed
-                if (nameTextBox.Text != currentKit.Name)
+                if (createMode)
                 {
+                    //Add kit to list if it is a new kit
+                    currentKit.Name = nameTextBox.Text;
+                    Properties.MusicKits.Add(currentKit);
+                }
+                else if (nameTextBox.Text != currentKit.Name)
+                {
+                    //Detect if a music kit was renamed
                     Properties.DeleteKitFile(currentKit.Name);
                     currentKit.Name = nameTextBox.Text;
                 }
@@ -66,19 +91,36 @@ namespace CS_Jukebox
                 Properties.SaveKits();
 
                 //Add some form of delegate method to invoke in MainForm.cs
+                refreshHandler.Invoke();
                 Close();
             }
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
+            refreshHandler.Invoke();
             Close();
         }
 
-        private void musicComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void deleteButton_Click(object sender, EventArgs e)
         {
-            nameTextBox.Text = musicComboBox.Text;
-            currentKit = Properties.MusicKits[musicComboBox.SelectedIndex];
+            DialogResult confirmResult = MessageBox.Show("Are you sure you want to delete this kit?", "Delete Music Kit", MessageBoxButtons.YesNo);
+
+            if (createMode)
+            {
+                refreshHandler.Invoke();
+                Close();
+            }
+
+            if (confirmResult == DialogResult.Yes)
+            {
+                Properties.DeleteKitFile(currentKit.Name);
+                Properties.MusicKits.Remove(currentKit);
+                Properties.SaveKits();
+
+                refreshHandler.Invoke();
+                Close();
+            }
         }
     }
 }

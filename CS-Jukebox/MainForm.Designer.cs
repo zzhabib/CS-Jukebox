@@ -36,6 +36,7 @@ namespace CS_Jukebox
             this.musicComboBox = new System.Windows.Forms.ComboBox();
             this.addButton = new System.Windows.Forms.Button();
             this.settingsButton = new System.Windows.Forms.Button();
+            this.editButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,18 +73,19 @@ namespace CS_Jukebox
             // musicComboBox
             // 
             this.musicComboBox.FormattingEnabled = true;
-            this.musicComboBox.Location = new System.Drawing.Point(79, 12);
+            this.musicComboBox.Location = new System.Drawing.Point(12, 12);
             this.musicComboBox.Name = "musicComboBox";
             this.musicComboBox.Size = new System.Drawing.Size(121, 23);
             this.musicComboBox.TabIndex = 3;
             this.musicComboBox.Tag = "";
-            this.musicComboBox.Text = "Music Kit";
+            this.musicComboBox.Text = "Select Music Kit...";
+            this.musicComboBox.SelectedIndexChanged += new System.EventHandler(this.musicComboBox_SelectedIndexChanged);
             // 
             // addButton
             // 
-            this.addButton.Location = new System.Drawing.Point(12, 12);
+            this.addButton.Location = new System.Drawing.Point(139, 11);
             this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(51, 23);
+            this.addButton.Size = new System.Drawing.Size(58, 23);
             this.addButton.TabIndex = 4;
             this.addButton.Text = "Add";
             this.addButton.UseVisualStyleBackColor = true;
@@ -91,18 +93,29 @@ namespace CS_Jukebox
             // 
             // settingsButton
             // 
-            this.settingsButton.Location = new System.Drawing.Point(215, 12);
+            this.settingsButton.Location = new System.Drawing.Point(12, 41);
             this.settingsButton.Name = "settingsButton";
             this.settingsButton.Size = new System.Drawing.Size(58, 23);
             this.settingsButton.TabIndex = 5;
             this.settingsButton.Text = "Settings";
             this.settingsButton.UseVisualStyleBackColor = true;
             // 
+            // editButton
+            // 
+            this.editButton.Location = new System.Drawing.Point(215, 11);
+            this.editButton.Name = "editButton";
+            this.editButton.Size = new System.Drawing.Size(58, 23);
+            this.editButton.TabIndex = 6;
+            this.editButton.Text = "Edit";
+            this.editButton.UseVisualStyleBackColor = true;
+            this.editButton.Click += new System.EventHandler(this.editButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(285, 449);
+            this.ClientSize = new System.Drawing.Size(285, 442);
+            this.Controls.Add(this.editButton);
             this.Controls.Add(this.settingsButton);
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.musicComboBox);
@@ -125,6 +138,7 @@ namespace CS_Jukebox
         private System.Windows.Forms.ComboBox musicComboBox;
         private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.Button settingsButton;
+        private System.Windows.Forms.Button editButton;
     }
 }
 

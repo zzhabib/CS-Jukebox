@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace CS_Jukebox
 {
     //Contains references to SongProfiles
-    class MusicKit
+    public class MusicKit
     {
         public string Name;
 
@@ -17,6 +17,18 @@ namespace CS_Jukebox
         public SongProfile winSong { get; set; }
         public SongProfile loseSong { get; set; }
         public SongProfile MVPSong { get; set; }
+
+        public MusicKit()
+        {
+            Name = "";
+
+            freezeSong = null;
+            startSong = null;
+            bombSong = null;
+            winSong = null;
+            loseSong = null;
+            MVPSong = null;
+        }
 
         public MusicKit(string name)
         {

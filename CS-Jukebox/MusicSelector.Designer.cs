@@ -33,8 +33,6 @@ namespace CS_Jukebox
             this.freezeTextBox = new System.Windows.Forms.TextBox();
             this.freezeGroup = new System.Windows.Forms.GroupBox();
             this.freezeTrackBar = new System.Windows.Forms.TrackBar();
-            this.label1 = new System.Windows.Forms.Label();
-            this.musicComboBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.startGroup = new System.Windows.Forms.GroupBox();
@@ -60,7 +58,6 @@ namespace CS_Jukebox
             this.bombTextBox = new System.Windows.Forms.TextBox();
             this.saveButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
-            this.createButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
             this.freezeGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.freezeTrackBar)).BeginInit();
@@ -123,29 +120,11 @@ namespace CS_Jukebox
             this.freezeTrackBar.TickStyle = System.Windows.Forms.TickStyle.None;
             this.freezeTrackBar.Value = 100;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 15);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Select Music Kit:";
-            // 
-            // musicComboBox
-            // 
-            this.musicComboBox.FormattingEnabled = true;
-            this.musicComboBox.Location = new System.Drawing.Point(12, 27);
-            this.musicComboBox.Name = "musicComboBox";
-            this.musicComboBox.Size = new System.Drawing.Size(121, 23);
-            this.musicComboBox.TabIndex = 6;
-            this.musicComboBox.SelectedIndexChanged += new System.EventHandler(this.musicComboBox_SelectedIndexChanged);
-            // 
             // label2
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(168, 9);
+            this.label2.Location = new System.Drawing.Point(12, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(42, 15);
             this.label2.TabIndex = 7;
@@ -153,7 +132,7 @@ namespace CS_Jukebox
             // 
             // nameTextBox
             // 
-            this.nameTextBox.Location = new System.Drawing.Point(136, 27);
+            this.nameTextBox.Location = new System.Drawing.Point(60, 6);
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(121, 23);
             this.nameTextBox.TabIndex = 8;
@@ -426,24 +405,15 @@ namespace CS_Jukebox
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
-            // createButton
-            // 
-            this.createButton.Location = new System.Drawing.Point(36, 56);
-            this.createButton.Name = "createButton";
-            this.createButton.Size = new System.Drawing.Size(75, 23);
-            this.createButton.TabIndex = 13;
-            this.createButton.Text = "Create";
-            this.createButton.UseVisualStyleBackColor = true;
-            this.createButton.Click += new System.EventHandler(this.createButton_Click);
-            // 
             // deleteButton
             // 
-            this.deleteButton.Location = new System.Drawing.Point(167, 56);
+            this.deleteButton.Location = new System.Drawing.Point(187, 5);
             this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(75, 23);
+            this.deleteButton.Size = new System.Drawing.Size(75, 24);
             this.deleteButton.TabIndex = 14;
             this.deleteButton.Text = "Delete";
             this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // MusicSelector
             // 
@@ -451,14 +421,11 @@ namespace CS_Jukebox
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(269, 454);
             this.Controls.Add(this.deleteButton);
-            this.Controls.Add(this.createButton);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.songPanel);
             this.Controls.Add(this.nameTextBox);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.musicComboBox);
-            this.Controls.Add(this.label1);
             this.Name = "MusicSelector";
             this.Text = "Music Selector";
             this.Load += new System.EventHandler(this.MusicSelector_Load);
@@ -491,8 +458,6 @@ namespace CS_Jukebox
         private System.Windows.Forms.TextBox freezeTextBox;
         private System.Windows.Forms.GroupBox freezeGroup;
         private System.Windows.Forms.TrackBar freezeTrackBar;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox musicComboBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox nameTextBox;
         private System.Windows.Forms.GroupBox startGroup;
@@ -518,7 +483,6 @@ namespace CS_Jukebox
         private System.Windows.Forms.TextBox MVPTextBox;
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.Button createButton;
         private System.Windows.Forms.Button deleteButton;
     }
 }
