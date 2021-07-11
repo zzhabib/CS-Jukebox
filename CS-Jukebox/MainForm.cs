@@ -47,9 +47,9 @@ namespace CS_Jukebox
 
         void Start()
         {
-            if (Properties.MusicKits.Count > 0)
+            foreach (MusicKit musicKit in Properties.MusicKits)
             {
-                musicComboBox.
+                musicComboBox.Items.Add(musicKit.Name);
             }
 
             SetupGameListener();
@@ -73,6 +73,12 @@ namespace CS_Jukebox
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
             jukebox.SetVolume(trackBar1.Value * 10);
+        }
+
+        private void addButton_Click(object sender, EventArgs e)
+        {
+            Form musicSelector = new MusicSelector();
+            musicSelector.Show(this);
         }
     }
 }

@@ -11,16 +11,22 @@ namespace CS_Jukebox
 {
     static class Properties
     {
-        public static string GameDir = null;
-        public static List<MusicKit> MusicKits = null;
-        public static MusicKit SelectedKit = null;
-        private static string SelectedKitName = null;
-
         public static readonly string ConfigPath = @"\csgo\cfg\gamestate_integration_jukebox.cfg";
         public static readonly string ConfigName = @"\gamestate_integration_jukebox.cfg";
         public static readonly string PropertiesFilePath = @"\properties.json";
 
         public static readonly string MusicKitsPath = @"\kits";
+
+        public static string GameDir = null;
+        public static List<MusicKit> MusicKits = null;
+        public static MusicKit SelectedKit
+        {
+            get { return selectedKit; }
+            set { SetKit(value); }
+        }
+
+        private static MusicKit selectedKit = null;
+        private static string SelectedKitName = null;
 
         //Converts settings to json file then saves it
         public static void SaveProperties()
@@ -94,7 +100,7 @@ namespace CS_Jukebox
             string dir = Directory.GetCurrentDirectory() + MusicKitsPath;
 
             Directory.CreateDirectory(dir);
-            
+
             foreach (MusicKit musicKit in MusicKits)
             {
                 string kitDir = dir + @"\" + musicKit.Name + ".json";
@@ -119,7 +125,7 @@ namespace CS_Jukebox
                     try
                     {
                         jsonFile = File.ReadAllText(filePath);
-                        
+
                     }
                     catch (Exception e)
                     {
@@ -148,7 +154,18 @@ namespace CS_Jukebox
                         SelectedKit = musicKit;
                     }
                 }
+
+                if (SelectedKit == null)
+                {
+                    SelectedKit = MusicKits[0];
+                }
             }
+        }
+
+        private static void SetKit(MusicKit newKit)
+        {
+            selectedKit = newKit;
+            SelectedKitName = selectedKit.Name;
         }
 
         //Inner class for properties parameters
