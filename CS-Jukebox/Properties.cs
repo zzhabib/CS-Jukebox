@@ -35,6 +35,7 @@ namespace CS_Jukebox
 
             PropertiesFile propFile = new PropertiesFile();
             propFile.GameDir = GameDir;
+            propFile.SelectedKitName = SelectedKitName;
             Console.WriteLine(propFile.GameDir);
 
             string jsonFile = JsonConvert.SerializeObject(propFile);

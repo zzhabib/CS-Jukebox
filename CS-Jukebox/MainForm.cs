@@ -62,7 +62,6 @@ namespace CS_Jukebox
         void RefreshParameters()
         {
             CreateKitDropdown();
-            musicComboBox.SelectedIndex = Properties.MusicKits.IndexOf(Properties.SelectedKit);
         }
 
         private void CreateKitDropdown()
@@ -73,6 +72,9 @@ namespace CS_Jukebox
             {
                 musicComboBox.Items.Add(musicKit.Name);
             }
+
+            if (Properties.SelectedKit != null)
+                musicComboBox.SelectedIndex = Properties.MusicKits.IndexOf(Properties.SelectedKit);
         }
 
         private void browseBtn_Click(object sender, EventArgs e)

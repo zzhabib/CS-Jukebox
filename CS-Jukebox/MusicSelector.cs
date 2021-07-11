@@ -80,6 +80,7 @@ namespace CS_Jukebox
                     //Add kit to list if it is a new kit
                     currentKit.Name = nameTextBox.Text;
                     Properties.MusicKits.Add(currentKit);
+                    Properties.SelectedKit = currentKit;
                 }
                 else if (nameTextBox.Text != currentKit.Name)
                 {
