@@ -37,44 +37,44 @@ namespace CS_Jukebox
             this.musicComboBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.roundBox = new System.Windows.Forms.GroupBox();
-            this.trackBar1 = new System.Windows.Forms.TrackBar();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.startGroup = new System.Windows.Forms.GroupBox();
+            this.startTrackBar = new System.Windows.Forms.TrackBar();
+            this.startButton = new System.Windows.Forms.Button();
+            this.startBox = new System.Windows.Forms.TextBox();
             this.songPanel = new System.Windows.Forms.Panel();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.trackBar5 = new System.Windows.Forms.TrackBar();
-            this.button5 = new System.Windows.Forms.Button();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.trackBar4 = new System.Windows.Forms.TrackBar();
-            this.button4 = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.trackBar3 = new System.Windows.Forms.TrackBar();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.bombBox = new System.Windows.Forms.GroupBox();
-            this.trackBar2 = new System.Windows.Forms.TrackBar();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.MVPGroup = new System.Windows.Forms.GroupBox();
+            this.MVPTrackBar = new System.Windows.Forms.TrackBar();
+            this.MBPButton = new System.Windows.Forms.Button();
+            this.MVPTextBox = new System.Windows.Forms.TextBox();
+            this.lostGroup = new System.Windows.Forms.GroupBox();
+            this.lostTrackBar = new System.Windows.Forms.TrackBar();
+            this.lostButton = new System.Windows.Forms.Button();
+            this.lostTextBox = new System.Windows.Forms.TextBox();
+            this.wonGroup = new System.Windows.Forms.GroupBox();
+            this.wonTrackBar = new System.Windows.Forms.TrackBar();
+            this.wonButton = new System.Windows.Forms.Button();
+            this.wonTextBox = new System.Windows.Forms.TextBox();
+            this.bombGroup = new System.Windows.Forms.GroupBox();
+            this.bombTrackBar = new System.Windows.Forms.TrackBar();
+            this.bombButton = new System.Windows.Forms.Button();
+            this.bombTextBox = new System.Windows.Forms.TextBox();
             this.saveButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
             this.createButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
             this.freezeGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.freezeTrackBar)).BeginInit();
-            this.roundBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            this.startGroup.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.startTrackBar)).BeginInit();
             this.songPanel.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar5)).BeginInit();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar4)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).BeginInit();
-            this.bombBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
+            this.MVPGroup.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MVPTrackBar)).BeginInit();
+            this.lostGroup.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lostTrackBar)).BeginInit();
+            this.wonGroup.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.wonTrackBar)).BeginInit();
+            this.bombGroup.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bombTrackBar)).BeginInit();
             this.SuspendLayout();
             // 
             // freezeButton
@@ -157,251 +157,251 @@ namespace CS_Jukebox
             this.textBox2.Size = new System.Drawing.Size(121, 23);
             this.textBox2.TabIndex = 8;
             // 
-            // roundBox
+            // startGroup
             // 
-            this.roundBox.Controls.Add(this.trackBar1);
-            this.roundBox.Controls.Add(this.button1);
-            this.roundBox.Controls.Add(this.textBox1);
-            this.roundBox.Location = new System.Drawing.Point(11, 87);
-            this.roundBox.Name = "roundBox";
-            this.roundBox.Size = new System.Drawing.Size(235, 78);
-            this.roundBox.TabIndex = 9;
-            this.roundBox.TabStop = false;
-            this.roundBox.Text = "Round Start:";
+            this.startGroup.Controls.Add(this.startTrackBar);
+            this.startGroup.Controls.Add(this.startButton);
+            this.startGroup.Controls.Add(this.startBox);
+            this.startGroup.Location = new System.Drawing.Point(11, 87);
+            this.startGroup.Name = "startGroup";
+            this.startGroup.Size = new System.Drawing.Size(235, 78);
+            this.startGroup.TabIndex = 9;
+            this.startGroup.TabStop = false;
+            this.startGroup.Text = "Round Start:";
             // 
-            // trackBar1
+            // startTrackBar
             // 
-            this.trackBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.startTrackBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.trackBar1.AutoSize = false;
-            this.trackBar1.LargeChange = 10;
-            this.trackBar1.Location = new System.Drawing.Point(6, 22);
-            this.trackBar1.Maximum = 100;
-            this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(223, 24);
-            this.trackBar1.SmallChange = 5;
-            this.trackBar1.TabIndex = 3;
-            this.trackBar1.Tag = "";
-            this.trackBar1.TickStyle = System.Windows.Forms.TickStyle.None;
-            this.trackBar1.Value = 100;
+            this.startTrackBar.AutoSize = false;
+            this.startTrackBar.LargeChange = 10;
+            this.startTrackBar.Location = new System.Drawing.Point(6, 22);
+            this.startTrackBar.Maximum = 100;
+            this.startTrackBar.Name = "startTrackBar";
+            this.startTrackBar.Size = new System.Drawing.Size(223, 24);
+            this.startTrackBar.SmallChange = 5;
+            this.startTrackBar.TabIndex = 3;
+            this.startTrackBar.Tag = "";
+            this.startTrackBar.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.startTrackBar.Value = 100;
             // 
-            // button1
+            // startButton
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button1.Location = new System.Drawing.Point(6, 49);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Browse";
-            this.button1.UseVisualStyleBackColor = true;
+            this.startButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.startButton.Location = new System.Drawing.Point(6, 49);
+            this.startButton.Name = "startButton";
+            this.startButton.Size = new System.Drawing.Size(75, 23);
+            this.startButton.TabIndex = 1;
+            this.startButton.Text = "Browse";
+            this.startButton.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // startBox
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(98, 49);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(131, 23);
-            this.textBox1.TabIndex = 2;
+            this.startBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.startBox.Location = new System.Drawing.Point(98, 49);
+            this.startBox.Name = "startBox";
+            this.startBox.Size = new System.Drawing.Size(131, 23);
+            this.startBox.TabIndex = 2;
             // 
             // songPanel
             // 
             this.songPanel.AccessibleName = "";
             this.songPanel.AutoScroll = true;
-            this.songPanel.Controls.Add(this.groupBox3);
-            this.songPanel.Controls.Add(this.groupBox2);
-            this.songPanel.Controls.Add(this.groupBox1);
-            this.songPanel.Controls.Add(this.bombBox);
+            this.songPanel.Controls.Add(this.MVPGroup);
+            this.songPanel.Controls.Add(this.lostGroup);
+            this.songPanel.Controls.Add(this.wonGroup);
+            this.songPanel.Controls.Add(this.bombGroup);
             this.songPanel.Controls.Add(this.freezeGroup);
-            this.songPanel.Controls.Add(this.roundBox);
+            this.songPanel.Controls.Add(this.startGroup);
             this.songPanel.Location = new System.Drawing.Point(2, 85);
             this.songPanel.Name = "songPanel";
             this.songPanel.Size = new System.Drawing.Size(266, 336);
             this.songPanel.TabIndex = 10;
             this.songPanel.Tag = "";
             // 
-            // groupBox3
+            // MVPGroup
             // 
-            this.groupBox3.Controls.Add(this.trackBar5);
-            this.groupBox3.Controls.Add(this.button5);
-            this.groupBox3.Controls.Add(this.textBox6);
-            this.groupBox3.Location = new System.Drawing.Point(11, 419);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(235, 75);
-            this.groupBox3.TabIndex = 13;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "MVP:";
+            this.MVPGroup.Controls.Add(this.MVPTrackBar);
+            this.MVPGroup.Controls.Add(this.MBPButton);
+            this.MVPGroup.Controls.Add(this.MVPTextBox);
+            this.MVPGroup.Location = new System.Drawing.Point(11, 419);
+            this.MVPGroup.Name = "MVPGroup";
+            this.MVPGroup.Size = new System.Drawing.Size(235, 75);
+            this.MVPGroup.TabIndex = 13;
+            this.MVPGroup.TabStop = false;
+            this.MVPGroup.Text = "MVP:";
             // 
-            // trackBar5
+            // MVPTrackBar
             // 
-            this.trackBar5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.MVPTrackBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.trackBar5.AutoSize = false;
-            this.trackBar5.LargeChange = 10;
-            this.trackBar5.Location = new System.Drawing.Point(6, 22);
-            this.trackBar5.Maximum = 100;
-            this.trackBar5.Name = "trackBar5";
-            this.trackBar5.Size = new System.Drawing.Size(223, 24);
-            this.trackBar5.SmallChange = 5;
-            this.trackBar5.TabIndex = 3;
-            this.trackBar5.Tag = "";
-            this.trackBar5.TickStyle = System.Windows.Forms.TickStyle.None;
-            this.trackBar5.Value = 100;
+            this.MVPTrackBar.AutoSize = false;
+            this.MVPTrackBar.LargeChange = 10;
+            this.MVPTrackBar.Location = new System.Drawing.Point(6, 22);
+            this.MVPTrackBar.Maximum = 100;
+            this.MVPTrackBar.Name = "MVPTrackBar";
+            this.MVPTrackBar.Size = new System.Drawing.Size(223, 24);
+            this.MVPTrackBar.SmallChange = 5;
+            this.MVPTrackBar.TabIndex = 3;
+            this.MVPTrackBar.Tag = "";
+            this.MVPTrackBar.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.MVPTrackBar.Value = 100;
             // 
-            // button5
+            // MBPButton
             // 
-            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button5.Location = new System.Drawing.Point(6, 46);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 1;
-            this.button5.Text = "Browse";
-            this.button5.UseVisualStyleBackColor = true;
+            this.MBPButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.MBPButton.Location = new System.Drawing.Point(6, 46);
+            this.MBPButton.Name = "MBPButton";
+            this.MBPButton.Size = new System.Drawing.Size(75, 23);
+            this.MBPButton.TabIndex = 1;
+            this.MBPButton.Text = "Browse";
+            this.MBPButton.UseVisualStyleBackColor = true;
             // 
-            // textBox6
+            // MVPTextBox
             // 
-            this.textBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox6.Location = new System.Drawing.Point(104, 46);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(125, 23);
-            this.textBox6.TabIndex = 2;
+            this.MVPTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.MVPTextBox.Location = new System.Drawing.Point(104, 46);
+            this.MVPTextBox.Name = "MVPTextBox";
+            this.MVPTextBox.Size = new System.Drawing.Size(125, 23);
+            this.MVPTextBox.TabIndex = 2;
             // 
-            // groupBox2
+            // lostGroup
             // 
-            this.groupBox2.Controls.Add(this.trackBar4);
-            this.groupBox2.Controls.Add(this.button4);
-            this.groupBox2.Controls.Add(this.textBox5);
-            this.groupBox2.Location = new System.Drawing.Point(11, 336);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(235, 77);
-            this.groupBox2.TabIndex = 12;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Round Lost:";
+            this.lostGroup.Controls.Add(this.lostTrackBar);
+            this.lostGroup.Controls.Add(this.lostButton);
+            this.lostGroup.Controls.Add(this.lostTextBox);
+            this.lostGroup.Location = new System.Drawing.Point(11, 336);
+            this.lostGroup.Name = "lostGroup";
+            this.lostGroup.Size = new System.Drawing.Size(235, 77);
+            this.lostGroup.TabIndex = 12;
+            this.lostGroup.TabStop = false;
+            this.lostGroup.Text = "Round Lost:";
             // 
-            // trackBar4
+            // lostTrackBar
             // 
-            this.trackBar4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lostTrackBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.trackBar4.AutoSize = false;
-            this.trackBar4.LargeChange = 10;
-            this.trackBar4.Location = new System.Drawing.Point(6, 22);
-            this.trackBar4.Maximum = 100;
-            this.trackBar4.Name = "trackBar4";
-            this.trackBar4.Size = new System.Drawing.Size(223, 24);
-            this.trackBar4.SmallChange = 5;
-            this.trackBar4.TabIndex = 3;
-            this.trackBar4.Tag = "";
-            this.trackBar4.TickStyle = System.Windows.Forms.TickStyle.None;
-            this.trackBar4.Value = 100;
+            this.lostTrackBar.AutoSize = false;
+            this.lostTrackBar.LargeChange = 10;
+            this.lostTrackBar.Location = new System.Drawing.Point(6, 22);
+            this.lostTrackBar.Maximum = 100;
+            this.lostTrackBar.Name = "lostTrackBar";
+            this.lostTrackBar.Size = new System.Drawing.Size(223, 24);
+            this.lostTrackBar.SmallChange = 5;
+            this.lostTrackBar.TabIndex = 3;
+            this.lostTrackBar.Tag = "";
+            this.lostTrackBar.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.lostTrackBar.Value = 100;
             // 
-            // button4
+            // lostButton
             // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button4.Location = new System.Drawing.Point(6, 48);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 1;
-            this.button4.Text = "Browse";
-            this.button4.UseVisualStyleBackColor = true;
+            this.lostButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lostButton.Location = new System.Drawing.Point(6, 48);
+            this.lostButton.Name = "lostButton";
+            this.lostButton.Size = new System.Drawing.Size(75, 23);
+            this.lostButton.TabIndex = 1;
+            this.lostButton.Text = "Browse";
+            this.lostButton.UseVisualStyleBackColor = true;
             // 
-            // textBox5
+            // lostTextBox
             // 
-            this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox5.Location = new System.Drawing.Point(98, 48);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(131, 23);
-            this.textBox5.TabIndex = 2;
+            this.lostTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lostTextBox.Location = new System.Drawing.Point(98, 48);
+            this.lostTextBox.Name = "lostTextBox";
+            this.lostTextBox.Size = new System.Drawing.Size(131, 23);
+            this.lostTextBox.TabIndex = 2;
             // 
-            // groupBox1
+            // wonGroup
             // 
-            this.groupBox1.Controls.Add(this.trackBar3);
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Location = new System.Drawing.Point(11, 255);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(235, 75);
-            this.groupBox1.TabIndex = 11;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Round Won:";
+            this.wonGroup.Controls.Add(this.wonTrackBar);
+            this.wonGroup.Controls.Add(this.wonButton);
+            this.wonGroup.Controls.Add(this.wonTextBox);
+            this.wonGroup.Location = new System.Drawing.Point(11, 255);
+            this.wonGroup.Name = "wonGroup";
+            this.wonGroup.Size = new System.Drawing.Size(235, 75);
+            this.wonGroup.TabIndex = 11;
+            this.wonGroup.TabStop = false;
+            this.wonGroup.Text = "Round Won:";
             // 
-            // trackBar3
+            // wonTrackBar
             // 
-            this.trackBar3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.wonTrackBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.trackBar3.AutoSize = false;
-            this.trackBar3.LargeChange = 10;
-            this.trackBar3.Location = new System.Drawing.Point(6, 22);
-            this.trackBar3.Maximum = 100;
-            this.trackBar3.Name = "trackBar3";
-            this.trackBar3.Size = new System.Drawing.Size(223, 24);
-            this.trackBar3.SmallChange = 5;
-            this.trackBar3.TabIndex = 3;
-            this.trackBar3.Tag = "";
-            this.trackBar3.TickStyle = System.Windows.Forms.TickStyle.None;
-            this.trackBar3.Value = 100;
+            this.wonTrackBar.AutoSize = false;
+            this.wonTrackBar.LargeChange = 10;
+            this.wonTrackBar.Location = new System.Drawing.Point(6, 22);
+            this.wonTrackBar.Maximum = 100;
+            this.wonTrackBar.Name = "wonTrackBar";
+            this.wonTrackBar.Size = new System.Drawing.Size(223, 24);
+            this.wonTrackBar.SmallChange = 5;
+            this.wonTrackBar.TabIndex = 3;
+            this.wonTrackBar.Tag = "";
+            this.wonTrackBar.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.wonTrackBar.Value = 100;
             // 
-            // button3
+            // wonButton
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button3.Location = new System.Drawing.Point(6, 46);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Browse";
-            this.button3.UseVisualStyleBackColor = true;
+            this.wonButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.wonButton.Location = new System.Drawing.Point(6, 46);
+            this.wonButton.Name = "wonButton";
+            this.wonButton.Size = new System.Drawing.Size(75, 23);
+            this.wonButton.TabIndex = 1;
+            this.wonButton.Text = "Browse";
+            this.wonButton.UseVisualStyleBackColor = true;
             // 
-            // textBox4
+            // wonTextBox
             // 
-            this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox4.Location = new System.Drawing.Point(98, 46);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(131, 23);
-            this.textBox4.TabIndex = 2;
+            this.wonTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.wonTextBox.Location = new System.Drawing.Point(98, 46);
+            this.wonTextBox.Name = "wonTextBox";
+            this.wonTextBox.Size = new System.Drawing.Size(131, 23);
+            this.wonTextBox.TabIndex = 2;
             // 
-            // bombBox
+            // bombGroup
             // 
-            this.bombBox.Controls.Add(this.trackBar2);
-            this.bombBox.Controls.Add(this.button2);
-            this.bombBox.Controls.Add(this.textBox3);
-            this.bombBox.Location = new System.Drawing.Point(11, 171);
-            this.bombBox.Name = "bombBox";
-            this.bombBox.Size = new System.Drawing.Size(235, 78);
-            this.bombBox.TabIndex = 10;
-            this.bombBox.TabStop = false;
-            this.bombBox.Text = "Bomb Planted:";
+            this.bombGroup.Controls.Add(this.bombTrackBar);
+            this.bombGroup.Controls.Add(this.bombButton);
+            this.bombGroup.Controls.Add(this.bombTextBox);
+            this.bombGroup.Location = new System.Drawing.Point(11, 171);
+            this.bombGroup.Name = "bombGroup";
+            this.bombGroup.Size = new System.Drawing.Size(235, 78);
+            this.bombGroup.TabIndex = 10;
+            this.bombGroup.TabStop = false;
+            this.bombGroup.Text = "Bomb Planted:";
             // 
-            // trackBar2
+            // bombTrackBar
             // 
-            this.trackBar2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.bombTrackBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.trackBar2.AutoSize = false;
-            this.trackBar2.LargeChange = 10;
-            this.trackBar2.Location = new System.Drawing.Point(6, 22);
-            this.trackBar2.Maximum = 100;
-            this.trackBar2.Name = "trackBar2";
-            this.trackBar2.Size = new System.Drawing.Size(223, 24);
-            this.trackBar2.SmallChange = 5;
-            this.trackBar2.TabIndex = 3;
-            this.trackBar2.Tag = "";
-            this.trackBar2.TickStyle = System.Windows.Forms.TickStyle.None;
-            this.trackBar2.Value = 100;
+            this.bombTrackBar.AutoSize = false;
+            this.bombTrackBar.LargeChange = 10;
+            this.bombTrackBar.Location = new System.Drawing.Point(6, 22);
+            this.bombTrackBar.Maximum = 100;
+            this.bombTrackBar.Name = "bombTrackBar";
+            this.bombTrackBar.Size = new System.Drawing.Size(223, 24);
+            this.bombTrackBar.SmallChange = 5;
+            this.bombTrackBar.TabIndex = 3;
+            this.bombTrackBar.Tag = "";
+            this.bombTrackBar.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.bombTrackBar.Value = 100;
             // 
-            // button2
+            // bombButton
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button2.Location = new System.Drawing.Point(6, 49);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Browse";
-            this.button2.UseVisualStyleBackColor = true;
+            this.bombButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.bombButton.Location = new System.Drawing.Point(6, 49);
+            this.bombButton.Name = "bombButton";
+            this.bombButton.Size = new System.Drawing.Size(75, 23);
+            this.bombButton.TabIndex = 1;
+            this.bombButton.Text = "Browse";
+            this.bombButton.UseVisualStyleBackColor = true;
             // 
-            // textBox3
+            // bombTextBox
             // 
-            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox3.Location = new System.Drawing.Point(98, 49);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(131, 23);
-            this.textBox3.TabIndex = 2;
+            this.bombTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bombTextBox.Location = new System.Drawing.Point(98, 49);
+            this.bombTextBox.Name = "bombTextBox";
+            this.bombTextBox.Size = new System.Drawing.Size(131, 23);
+            this.bombTextBox.TabIndex = 2;
             // 
             // saveButton
             // 
@@ -461,22 +461,22 @@ namespace CS_Jukebox
             this.freezeGroup.ResumeLayout(false);
             this.freezeGroup.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.freezeTrackBar)).EndInit();
-            this.roundBox.ResumeLayout(false);
-            this.roundBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            this.startGroup.ResumeLayout(false);
+            this.startGroup.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.startTrackBar)).EndInit();
             this.songPanel.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar5)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar4)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).EndInit();
-            this.bombBox.ResumeLayout(false);
-            this.bombBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
+            this.MVPGroup.ResumeLayout(false);
+            this.MVPGroup.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MVPTrackBar)).EndInit();
+            this.lostGroup.ResumeLayout(false);
+            this.lostGroup.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lostTrackBar)).EndInit();
+            this.wonGroup.ResumeLayout(false);
+            this.wonGroup.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.wonTrackBar)).EndInit();
+            this.bombGroup.ResumeLayout(false);
+            this.bombGroup.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bombTrackBar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -491,27 +491,27 @@ namespace CS_Jukebox
         private System.Windows.Forms.ComboBox musicComboBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.GroupBox roundBox;
-        private System.Windows.Forms.TrackBar trackBar1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.GroupBox startGroup;
+        private System.Windows.Forms.TrackBar startTrackBar;
+        private System.Windows.Forms.Button startButton;
+        private System.Windows.Forms.TextBox startBox;
         private System.Windows.Forms.Panel songPanel;
-        private System.Windows.Forms.GroupBox bombBox;
-        private System.Windows.Forms.TrackBar trackBar2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TrackBar trackBar3;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TrackBar trackBar4;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TrackBar trackBar5;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.GroupBox bombGroup;
+        private System.Windows.Forms.TrackBar bombTrackBar;
+        private System.Windows.Forms.Button bombButton;
+        private System.Windows.Forms.TextBox bombTextBox;
+        private System.Windows.Forms.GroupBox wonGroup;
+        private System.Windows.Forms.TrackBar wonTrackBar;
+        private System.Windows.Forms.Button wonButton;
+        private System.Windows.Forms.TextBox wonTextBox;
+        private System.Windows.Forms.GroupBox lostGroup;
+        private System.Windows.Forms.TrackBar lostTrackBar;
+        private System.Windows.Forms.Button lostButton;
+        private System.Windows.Forms.TextBox lostTextBox;
+        private System.Windows.Forms.GroupBox MVPGroup;
+        private System.Windows.Forms.TrackBar MVPTrackBar;
+        private System.Windows.Forms.Button MBPButton;
+        private System.Windows.Forms.TextBox MVPTextBox;
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Button createButton;
