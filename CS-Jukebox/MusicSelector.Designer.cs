@@ -139,6 +139,7 @@ namespace CS_Jukebox
             this.musicComboBox.Name = "musicComboBox";
             this.musicComboBox.Size = new System.Drawing.Size(121, 23);
             this.musicComboBox.TabIndex = 6;
+            this.musicComboBox.SelectedIndexChanged += new System.EventHandler(this.musicComboBox_SelectedIndexChanged);
             // 
             // label2
             // 

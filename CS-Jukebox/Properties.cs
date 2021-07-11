@@ -163,6 +163,14 @@ namespace CS_Jukebox
             }
         }
 
+        //Deletes the json file for a kit but not the kit itself
+        public static void DeleteKitFile(string kitName)
+        {
+            string dir = Directory.GetCurrentDirectory() + MusicKitsPath;
+            string kitDir = dir + @"\" + kitName + ".json";
+            File.Delete(kitDir);
+        }
+
         private static void SetKit(MusicKit newKit)
         {
             selectedKit = newKit;

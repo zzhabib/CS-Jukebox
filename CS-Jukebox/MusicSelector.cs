@@ -56,7 +56,12 @@ namespace CS_Jukebox
                 currentKit.loseSong = new SongProfile(lostTextBox.Text, lostTrackBar.Value);
                 currentKit.MVPSong = new SongProfile(MVPTextBox.Text, MVPTrackBar.Value);
 
-                currentKit.Name = nameTextBox.Text;
+                //Detect if a music kit was renamed
+                if (nameTextBox.Text != currentKit.Name)
+                {
+                    Properties.DeleteKitFile(currentKit.Name);
+                    currentKit.Name = nameTextBox.Text;
+                }
 
                 Properties.SaveKits();
 
@@ -68,6 +73,12 @@ namespace CS_Jukebox
         private void cancelButton_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void musicComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            nameTextBox.Text = musicComboBox.Text;
+            currentKit = Properties.MusicKits[musicComboBox.SelectedIndex];
         }
     }
 }
