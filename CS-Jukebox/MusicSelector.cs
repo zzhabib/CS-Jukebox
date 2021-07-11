@@ -13,7 +13,6 @@ namespace CS_Jukebox
             InitializeComponent();
 
             if (createKit.HasValue) createMode = createKit.Value;
-
             currentKit = newKit;
 
             LoadKitParameters();
@@ -24,9 +23,24 @@ namespace CS_Jukebox
 
         }
 
+        //Loads parameters into controls such as textboxes and trackbars
         private void LoadKitParameters()
         {
             nameTextBox.Text = currentKit.Name;
+
+            freezeTextBox.Text = currentKit.freezeSong.Path;
+            startTextBox.Text = currentKit.startSong.Path;
+            bombTextBox.Text = currentKit.bombSong.Path;
+            wonTextBox.Text = currentKit.winSong.Path;
+            lostTextBox.Text = currentKit.loseSong.Path;
+            MVPTextBox.Text = currentKit.MVPSong.Path;
+
+            freezeTrackBar.Value = currentKit.freezeSong.Volume;
+            startTrackBar.Value = currentKit.startSong.Volume;
+            bombTrackBar.Value = currentKit.bombSong.Volume;
+            wonTrackBar.Value = currentKit.winSong.Volume;
+            lostTrackBar.Value = currentKit.loseSong.Volume;
+            MVPTrackBar.Value = currentKit.MVPSong.Volume;
         }
 
         private void createButton_Click(object sender, EventArgs e)
@@ -101,6 +115,46 @@ namespace CS_Jukebox
 
                 Close();
             }
+        }
+
+        //Click handlers for browse buttons
+
+        private void OpenSongFile(TextBox textBox)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                textBox.Text = openFileDialog1.FileName;
+            }
+        }
+
+        private void freezeButton_Click(object sender, EventArgs e)
+        {
+            OpenSongFile(freezeTextBox);
+        }
+
+        private void startButton_Click(object sender, EventArgs e)
+        {
+            OpenSongFile(startTextBox);
+        }
+
+        private void bombButton_Click(object sender, EventArgs e)
+        {
+            OpenSongFile(bombTextBox);
+        }
+
+        private void wonButton_Click(object sender, EventArgs e)
+        {
+            OpenSongFile(wonTextBox);
+        }
+
+        private void lostButton_Click(object sender, EventArgs e)
+        {
+            OpenSongFile(lostTextBox);
+        }
+
+        private void MVPButton_Click(object sender, EventArgs e)
+        {
+            OpenSongFile(MVPTextBox);
         }
     }
 }

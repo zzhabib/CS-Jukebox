@@ -42,7 +42,7 @@ namespace CS_Jukebox
             this.songPanel = new System.Windows.Forms.Panel();
             this.MVPGroup = new System.Windows.Forms.GroupBox();
             this.MVPTrackBar = new System.Windows.Forms.TrackBar();
-            this.MBPButton = new System.Windows.Forms.Button();
+            this.MVPButton = new System.Windows.Forms.Button();
             this.MVPTextBox = new System.Windows.Forms.TextBox();
             this.lostGroup = new System.Windows.Forms.GroupBox();
             this.lostTrackBar = new System.Windows.Forms.TrackBar();
@@ -59,6 +59,7 @@ namespace CS_Jukebox
             this.saveButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.freezeGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.freezeTrackBar)).BeginInit();
             this.startGroup.SuspendLayout();
@@ -83,6 +84,7 @@ namespace CS_Jukebox
             this.freezeButton.TabIndex = 1;
             this.freezeButton.Text = "Browse";
             this.freezeButton.UseVisualStyleBackColor = true;
+            this.freezeButton.Click += new System.EventHandler(this.freezeButton_Click);
             // 
             // freezeTextBox
             // 
@@ -174,6 +176,7 @@ namespace CS_Jukebox
             this.startButton.TabIndex = 1;
             this.startButton.Text = "Browse";
             this.startButton.UseVisualStyleBackColor = true;
+            this.startButton.Click += new System.EventHandler(this.startButton_Click);
             // 
             // startTextBox
             // 
@@ -202,7 +205,7 @@ namespace CS_Jukebox
             // MVPGroup
             // 
             this.MVPGroup.Controls.Add(this.MVPTrackBar);
-            this.MVPGroup.Controls.Add(this.MBPButton);
+            this.MVPGroup.Controls.Add(this.MVPButton);
             this.MVPGroup.Controls.Add(this.MVPTextBox);
             this.MVPGroup.Location = new System.Drawing.Point(11, 419);
             this.MVPGroup.Name = "MVPGroup";
@@ -227,15 +230,16 @@ namespace CS_Jukebox
             this.MVPTrackBar.TickStyle = System.Windows.Forms.TickStyle.None;
             this.MVPTrackBar.Value = 100;
             // 
-            // MBPButton
+            // MVPButton
             // 
-            this.MBPButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.MBPButton.Location = new System.Drawing.Point(6, 46);
-            this.MBPButton.Name = "MBPButton";
-            this.MBPButton.Size = new System.Drawing.Size(75, 23);
-            this.MBPButton.TabIndex = 1;
-            this.MBPButton.Text = "Browse";
-            this.MBPButton.UseVisualStyleBackColor = true;
+            this.MVPButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.MVPButton.Location = new System.Drawing.Point(6, 46);
+            this.MVPButton.Name = "MVPButton";
+            this.MVPButton.Size = new System.Drawing.Size(75, 23);
+            this.MVPButton.TabIndex = 1;
+            this.MVPButton.Text = "Browse";
+            this.MVPButton.UseVisualStyleBackColor = true;
+            this.MVPButton.Click += new System.EventHandler(this.MVPButton_Click);
             // 
             // MVPTextBox
             // 
@@ -282,6 +286,7 @@ namespace CS_Jukebox
             this.lostButton.TabIndex = 1;
             this.lostButton.Text = "Browse";
             this.lostButton.UseVisualStyleBackColor = true;
+            this.lostButton.Click += new System.EventHandler(this.lostButton_Click);
             // 
             // lostTextBox
             // 
@@ -328,6 +333,7 @@ namespace CS_Jukebox
             this.wonButton.TabIndex = 1;
             this.wonButton.Text = "Browse";
             this.wonButton.UseVisualStyleBackColor = true;
+            this.wonButton.Click += new System.EventHandler(this.wonButton_Click);
             // 
             // wonTextBox
             // 
@@ -374,6 +380,7 @@ namespace CS_Jukebox
             this.bombButton.TabIndex = 1;
             this.bombButton.Text = "Browse";
             this.bombButton.UseVisualStyleBackColor = true;
+            this.bombButton.Click += new System.EventHandler(this.bombButton_Click);
             // 
             // bombTextBox
             // 
@@ -414,6 +421,14 @@ namespace CS_Jukebox
             this.deleteButton.Text = "Delete";
             this.deleteButton.UseVisualStyleBackColor = true;
             this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.AddExtension = false;
+            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.Filter = "MP3|*.mp3|Windows Audio|*.wav|MP4 Audio|*.m4a";
+            this.openFileDialog1.ReadOnlyChecked = true;
+            this.openFileDialog1.ShowReadOnly = true;
             // 
             // MusicSelector
             // 
@@ -479,10 +494,11 @@ namespace CS_Jukebox
         private System.Windows.Forms.TextBox lostTextBox;
         private System.Windows.Forms.GroupBox MVPGroup;
         private System.Windows.Forms.TrackBar MVPTrackBar;
-        private System.Windows.Forms.Button MBPButton;
+        private System.Windows.Forms.Button MVPButton;
         private System.Windows.Forms.TextBox MVPTextBox;
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Button deleteButton;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
