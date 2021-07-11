@@ -16,6 +16,18 @@ namespace CS_Jukebox
         public SongProfile bombSong { get; set; }
         public SongProfile winSong { get; set; }
         public SongProfile loseSong { get; set; }
-        public SongProfile mvpSong { get; set; }
+        public SongProfile MVPSong { get; set; }
+
+        public MusicKit(string name)
+        {
+            Name = name;
+
+            freezeSong = null;
+            startSong = null;
+            bombSong = null;
+            winSong = null;
+            loseSong = null;
+            MVPSong = null;
+        }
     }
 }

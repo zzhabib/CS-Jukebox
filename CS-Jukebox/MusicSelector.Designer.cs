@@ -30,17 +30,17 @@ namespace CS_Jukebox
         private void InitializeComponent()
         {
             this.freezeButton = new System.Windows.Forms.Button();
-            this.freezeBox = new System.Windows.Forms.TextBox();
+            this.freezeTextBox = new System.Windows.Forms.TextBox();
             this.freezeGroup = new System.Windows.Forms.GroupBox();
             this.freezeTrackBar = new System.Windows.Forms.TrackBar();
             this.label1 = new System.Windows.Forms.Label();
             this.musicComboBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.nameTextBox = new System.Windows.Forms.TextBox();
             this.startGroup = new System.Windows.Forms.GroupBox();
             this.startTrackBar = new System.Windows.Forms.TrackBar();
             this.startButton = new System.Windows.Forms.Button();
-            this.startBox = new System.Windows.Forms.TextBox();
+            this.startTextBox = new System.Windows.Forms.TextBox();
             this.songPanel = new System.Windows.Forms.Panel();
             this.MVPGroup = new System.Windows.Forms.GroupBox();
             this.MVPTrackBar = new System.Windows.Forms.TrackBar();
@@ -87,19 +87,19 @@ namespace CS_Jukebox
             this.freezeButton.Text = "Browse";
             this.freezeButton.UseVisualStyleBackColor = true;
             // 
-            // freezeBox
+            // freezeTextBox
             // 
-            this.freezeBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.freezeBox.Location = new System.Drawing.Point(98, 49);
-            this.freezeBox.Name = "freezeBox";
-            this.freezeBox.Size = new System.Drawing.Size(131, 23);
-            this.freezeBox.TabIndex = 2;
+            this.freezeTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.freezeTextBox.Location = new System.Drawing.Point(98, 49);
+            this.freezeTextBox.Name = "freezeTextBox";
+            this.freezeTextBox.Size = new System.Drawing.Size(131, 23);
+            this.freezeTextBox.TabIndex = 2;
             // 
             // freezeGroup
             // 
             this.freezeGroup.Controls.Add(this.freezeTrackBar);
             this.freezeGroup.Controls.Add(this.freezeButton);
-            this.freezeGroup.Controls.Add(this.freezeBox);
+            this.freezeGroup.Controls.Add(this.freezeTextBox);
             this.freezeGroup.Location = new System.Drawing.Point(11, 3);
             this.freezeGroup.Name = "freezeGroup";
             this.freezeGroup.Size = new System.Drawing.Size(235, 78);
@@ -150,18 +150,18 @@ namespace CS_Jukebox
             this.label2.TabIndex = 7;
             this.label2.Text = "Name:";
             // 
-            // textBox2
+            // nameTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(136, 27);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(121, 23);
-            this.textBox2.TabIndex = 8;
+            this.nameTextBox.Location = new System.Drawing.Point(136, 27);
+            this.nameTextBox.Name = "nameTextBox";
+            this.nameTextBox.Size = new System.Drawing.Size(121, 23);
+            this.nameTextBox.TabIndex = 8;
             // 
             // startGroup
             // 
             this.startGroup.Controls.Add(this.startTrackBar);
             this.startGroup.Controls.Add(this.startButton);
-            this.startGroup.Controls.Add(this.startBox);
+            this.startGroup.Controls.Add(this.startTextBox);
             this.startGroup.Location = new System.Drawing.Point(11, 87);
             this.startGroup.Name = "startGroup";
             this.startGroup.Size = new System.Drawing.Size(235, 78);
@@ -195,13 +195,13 @@ namespace CS_Jukebox
             this.startButton.Text = "Browse";
             this.startButton.UseVisualStyleBackColor = true;
             // 
-            // startBox
+            // startTextBox
             // 
-            this.startBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.startBox.Location = new System.Drawing.Point(98, 49);
-            this.startBox.Name = "startBox";
-            this.startBox.Size = new System.Drawing.Size(131, 23);
-            this.startBox.TabIndex = 2;
+            this.startTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.startTextBox.Location = new System.Drawing.Point(98, 49);
+            this.startTextBox.Name = "startTextBox";
+            this.startTextBox.Size = new System.Drawing.Size(131, 23);
+            this.startTextBox.TabIndex = 2;
             // 
             // songPanel
             // 
@@ -412,6 +412,7 @@ namespace CS_Jukebox
             this.saveButton.TabIndex = 11;
             this.saveButton.Text = "Save";
             this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
             // cancelButton
             // 
@@ -431,6 +432,7 @@ namespace CS_Jukebox
             this.createButton.TabIndex = 13;
             this.createButton.Text = "Create";
             this.createButton.UseVisualStyleBackColor = true;
+            this.createButton.Click += new System.EventHandler(this.createButton_Click);
             // 
             // deleteButton
             // 
@@ -451,7 +453,7 @@ namespace CS_Jukebox
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.songPanel);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.nameTextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.musicComboBox);
             this.Controls.Add(this.label1);
@@ -484,17 +486,17 @@ namespace CS_Jukebox
 
         #endregion
         private System.Windows.Forms.Button freezeButton;
-        private System.Windows.Forms.TextBox freezeBox;
+        private System.Windows.Forms.TextBox freezeTextBox;
         private System.Windows.Forms.GroupBox freezeGroup;
         private System.Windows.Forms.TrackBar freezeTrackBar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox musicComboBox;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox nameTextBox;
         private System.Windows.Forms.GroupBox startGroup;
         private System.Windows.Forms.TrackBar startTrackBar;
         private System.Windows.Forms.Button startButton;
-        private System.Windows.Forms.TextBox startBox;
+        private System.Windows.Forms.TextBox startTextBox;
         private System.Windows.Forms.Panel songPanel;
         private System.Windows.Forms.GroupBox bombGroup;
         private System.Windows.Forms.TrackBar bombTrackBar;
