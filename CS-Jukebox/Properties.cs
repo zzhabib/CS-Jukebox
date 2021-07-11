@@ -11,39 +11,24 @@ namespace CS_Jukebox
 {
     static class Properties
     {
+        //Paths
         public static readonly string ConfigPath = @"\csgo\cfg\gamestate_integration_jukebox.cfg";
         public static readonly string ConfigName = @"\gamestate_integration_jukebox.cfg";
         public static readonly string PropertiesFilePath = @"\properties.json";
-
         public static readonly string MusicKitsPath = @"\kits";
 
         public static string GameDir = null;
-        public static List<MusicKit> MusicKits = null;
+        public static int MasterVolume;
         public static MusicKit SelectedKit
         {
             get { return selectedKit; }
             set { SetKit(value); }
         }
 
+        public static List<MusicKit> MusicKits = null;
+
         private static MusicKit selectedKit = null;
         private static string SelectedKitName = null;
-
-        //Converts settings to json file then saves it
-        public static void SaveProperties()
-        {
-            string dir = Directory.GetCurrentDirectory() + PropertiesFilePath;
-
-            PropertiesFile propFile = new PropertiesFile();
-            propFile.GameDir = GameDir;
-            propFile.SelectedKitName = SelectedKitName;
-            Console.WriteLine(propFile.GameDir);
-
-            string jsonFile = JsonConvert.SerializeObject(propFile);
-
-            Console.WriteLine("Saving json properties: ");
-            Console.WriteLine(jsonFile);
-            File.WriteAllText(dir, jsonFile);
-        }
 
         //Calls all load methods
         public static void Load()
@@ -59,6 +44,24 @@ namespace CS_Jukebox
             SaveKits();
         }
 
+        //Converts settings to json file then saves it
+        public static void SaveProperties()
+        {
+            string dir = Directory.GetCurrentDirectory() + PropertiesFilePath;
+
+            PropertiesFile propFile = new PropertiesFile();
+            propFile.GameDir = GameDir;
+            propFile.SelectedKitName = SelectedKitName;
+            propFile.MasterVolume = MasterVolume;
+            Console.WriteLine(propFile.GameDir);
+
+            string jsonFile = JsonConvert.SerializeObject(propFile);
+
+            Console.WriteLine("Saving json properties: ");
+            Console.WriteLine(jsonFile);
+            File.WriteAllText(dir, jsonFile);
+        }
+
         //Reads properties file then deserializes it
         public static void LoadProperties()
         {
@@ -71,6 +74,7 @@ namespace CS_Jukebox
                 propFile = JsonConvert.DeserializeObject<PropertiesFile>(jsonFile);
                 GameDir = propFile.GameDir;
                 SelectedKitName = propFile.SelectedKitName;
+                MasterVolume = propFile.MasterVolume;
             }
             catch (FileNotFoundException e)
             {
@@ -124,10 +128,7 @@ namespace CS_Jukebox
 
                     try
                     {
-                        Console.WriteLine("Attempting to read file: ");
-                        Console.WriteLine(filePath);
                         jsonFile = File.ReadAllText(filePath);
-
                     }
                     catch (Exception e)
                     {
@@ -183,6 +184,7 @@ namespace CS_Jukebox
         {
             public string GameDir;
             public string SelectedKitName;
+            public int MasterVolume;
         }
     }
 }

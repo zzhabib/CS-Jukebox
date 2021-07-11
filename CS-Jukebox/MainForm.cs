@@ -45,8 +45,7 @@ namespace CS_Jukebox
 
         void Start()
         {
-            CreateKitDropdown();
-
+            RefreshParameters();
             SetupGameListener();
         }
 
@@ -60,6 +59,8 @@ namespace CS_Jukebox
         void RefreshParameters()
         {
             CreateKitDropdown();
+
+            trackBar1.Value = Properties.MasterVolume;
         }
 
         private void CreateKitDropdown()
@@ -75,18 +76,9 @@ namespace CS_Jukebox
                 musicComboBox.SelectedIndex = Properties.MusicKits.IndexOf(Properties.SelectedKit);
         }
 
-        private void browseBtn_Click(object sender, EventArgs e)
-        {
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                jukebox.PlaySong(openFileDialog1.FileName);
-                textBox1.Text = openFileDialog1.FileName;
-            }
-        }
-
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
-            jukebox.SetVolume(trackBar1.Value * 10);
+            Properties.MasterVolume = trackBar1.Value;
         }
 
         private void addButton_Click(object sender, EventArgs e)
@@ -109,6 +101,11 @@ namespace CS_Jukebox
         private void musicComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             Properties.SelectedKit = Properties.MusicKits[musicComboBox.SelectedIndex];
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Properties.Save();
         }
     }
 }

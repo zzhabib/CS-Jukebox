@@ -23,6 +23,12 @@ namespace CS_Jukebox
             player.controls.play();
         }
 
+        public void PlaySong(SongProfile song)
+        {
+            player.URL = song.Path;
+            player.controls.play();
+        }
+
         public void SetVolume(int vol)
         {
             player.settings.volume = vol;
