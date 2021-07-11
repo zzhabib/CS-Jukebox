@@ -14,15 +14,10 @@ namespace CS_Jukebox
     public partial class GamePathForm : Form
     {
         private bool dirValid = false;
-        private StartHandler startHandler;
 
-        public delegate void StartHandler();
-
-
-        public GamePathForm(StartHandler startHandler)
+        public GamePathForm()
         {
             InitializeComponent();
-            this.startHandler = startHandler;   //Save startHandler method
         }
 
         //Open folder browser dialog
@@ -45,9 +40,7 @@ namespace CS_Jukebox
         {
             if (dirValid)
             {
-                //CreateConfig();
                 Properties.SaveProperties();
-                startHandler.Invoke();  //Invoke the method that starts GameStateListener
                 Close();
             }
         }

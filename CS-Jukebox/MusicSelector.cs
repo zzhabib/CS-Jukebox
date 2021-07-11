@@ -5,33 +5,16 @@ namespace CS_Jukebox
 {
     public partial class MusicSelector : Form
     {
-        public delegate void RefreshHandler();
-
         MusicKit currentKit = null; //Music kit currently being edited
         bool createMode = false;
-        RefreshHandler refreshHandler;
 
-        //public MusicSelector()
-        //{
-        //    InitializeComponent();
-
-        //    foreach (MusicKit musicKit in Properties.MusicKits)
-        //    {
-        //        musicComboBox.Items.Add(musicKit.Name);
-        //    }
-
-        //    currentKit = Properties.SelectedKit;
-        //    musicComboBox.SelectedItem = currentKit;
-        //}
-
-        public MusicSelector(MusicKit newKit, RefreshHandler refreshHandler, bool? createKit)
+        public MusicSelector(MusicKit newKit, bool? createKit)
         {
             InitializeComponent();
 
             if (createKit.HasValue) createMode = createKit.Value;
 
             currentKit = newKit;
-            this.refreshHandler = refreshHandler;
 
             LoadKitParameters();
         }
@@ -92,14 +75,12 @@ namespace CS_Jukebox
                 Properties.SaveKits();
 
                 //Add some form of delegate method to invoke in MainForm.cs
-                refreshHandler.Invoke();
                 Close();
             }
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
-            refreshHandler.Invoke();
             Close();
         }
 
@@ -109,7 +90,6 @@ namespace CS_Jukebox
 
             if (createMode)
             {
-                refreshHandler.Invoke();
                 Close();
             }
 
@@ -119,7 +99,6 @@ namespace CS_Jukebox
                 Properties.MusicKits.Remove(currentKit);
                 Properties.SaveKits();
 
-                refreshHandler.Invoke();
                 Close();
             }
         }

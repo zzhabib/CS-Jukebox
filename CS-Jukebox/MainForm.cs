@@ -36,13 +36,11 @@ namespace CS_Jukebox
             //popup so that user can browse to it.
             if (Properties.GameDir == null)
             {
-                Form dirPopup = new GamePathForm(Start); //Pass method to start game listener
-                dirPopup.Show(this);
+                Form dirPopup = new GamePathForm(); //Pass method to start game listener
+                dirPopup.ShowDialog(this);
             }
-            else
-            {
-                Start();
-            }
+
+            Start();
         }
 
         void Start()
@@ -93,16 +91,18 @@ namespace CS_Jukebox
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            Form musicSelector = new MusicSelector(new MusicKit(), RefreshParameters, true);
-            musicSelector.Show(this);
+            Form musicSelector = new MusicSelector(new MusicKit(), true);
+            musicSelector.ShowDialog(this);
+            RefreshParameters();
         }
 
         private void editButton_Click(object sender, EventArgs e)
         {
             if (Properties.SelectedKit != null)
             {
-                Form musicSelector = new MusicSelector(Properties.SelectedKit, RefreshParameters, false);
-                musicSelector.Show(this);
+                Form musicSelector = new MusicSelector(Properties.SelectedKit, false);
+                musicSelector.ShowDialog(this);
+                RefreshParameters();
             }
         }
 
