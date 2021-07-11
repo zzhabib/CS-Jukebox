@@ -116,14 +116,15 @@ namespace CS_Jukebox
 
             if (Directory.Exists(dir))
             {
-                foreach (string fileName in Directory.GetFiles(dir))
+                foreach (string filePath in Directory.GetFiles(dir))
                 {
-                    if (!fileName.EndsWith(".json")) continue;
-                    string filePath = dir + @"\" + fileName;
+                    if (!filePath.EndsWith(".json")) continue;
                     string jsonFile = "";
 
                     try
                     {
+                        Console.WriteLine("Attempting to read file: ");
+                        Console.WriteLine(filePath);
                         jsonFile = File.ReadAllText(filePath);
 
                     }

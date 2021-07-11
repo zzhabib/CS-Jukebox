@@ -47,7 +47,10 @@ namespace CS_Jukebox
 
         void Start()
         {
-            musicComboBox.Items.AddRange(Properties.MusicKits.ToArray());
+            foreach (MusicKit musicKit in Properties.MusicKits)
+            {
+                musicComboBox.Items.Add(musicKit.Name);
+            }
 
             SetupGameListener();
         }

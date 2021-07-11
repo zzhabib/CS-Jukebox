@@ -12,7 +12,10 @@ namespace CS_Jukebox
         {
             InitializeComponent();
 
-            musicComboBox.Items.AddRange(Properties.MusicKits.ToArray());
+            foreach (MusicKit musicKit in Properties.MusicKits)
+            {
+                musicComboBox.Items.Add(musicKit.Name);
+            }
 
             currentKit = Properties.SelectedKit;
             musicComboBox.SelectedItem = currentKit;
@@ -33,7 +36,8 @@ namespace CS_Jukebox
             {
                 MusicKit newKit = new MusicKit(nameTextBox.Text);
                 Properties.MusicKits.Add(newKit);
-                musicComboBox.Items.Add(newKit);
+                musicComboBox.Items.Add(newKit.Name);
+                currentKit = newKit;
             }
         }
 
@@ -59,6 +63,11 @@ namespace CS_Jukebox
                 //Add some form of delegate method to invoke in MainForm.cs
                 Close();
             }
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
