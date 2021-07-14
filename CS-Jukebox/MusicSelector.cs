@@ -15,7 +15,7 @@ namespace CS_Jukebox
             if (createKit.HasValue) createMode = createKit.Value;
             currentKit = newKit;
 
-            LoadKitParameters();
+            if (!createMode) LoadKitParameters();
         }
 
         private void MusicSelector_Load(object sender, EventArgs e)

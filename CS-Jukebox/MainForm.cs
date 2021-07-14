@@ -21,7 +21,6 @@ namespace CS_Jukebox
         static extern bool AllocConsole();
 
         private GameLogic logic;
-        private Jukebox jukebox;
 
         public MainForm()
         {
@@ -29,8 +28,6 @@ namespace CS_Jukebox
             AllocConsole(); //Enable console
 
             Properties.Load();
-
-            jukebox = new Jukebox();
             
             //If game directory is not set, create
             //popup so that user can browse to it.

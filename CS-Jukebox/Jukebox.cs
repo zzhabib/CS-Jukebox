@@ -25,7 +25,11 @@ namespace CS_Jukebox
 
         public void PlaySong(SongProfile song)
         {
+            float volume = ((float)Properties.MasterVolume / 100) * (float)song.Volume;
+
+            Console.WriteLine("Playing song: " + song.Path + "\n" + "Volume: " + volume);
             player.URL = song.Path;
+            player.settings.volume = (int)volume;
             player.controls.play();
         }
 
