@@ -15,7 +15,7 @@ namespace CS_Jukebox
             if (createKit.HasValue) createMode = createKit.Value;
             currentKit = newKit;
 
-            if (!createMode) LoadKitParameters();
+            LoadKitParameters();
         }
 
         private void MusicSelector_Load(object sender, EventArgs e)
@@ -43,25 +43,12 @@ namespace CS_Jukebox
             MVPTrackBar.Value = currentKit.MVPSong.Volume;
         }
 
-        private void createButton_Click(object sender, EventArgs e)
-        {
-            if (nameTextBox.Text.Equals(""))
-            {
-                //Show warning prompt
-            }
-            else
-            {
-                MusicKit newKit = new MusicKit(nameTextBox.Text);
-                Properties.MusicKits.Add(newKit);
-                currentKit = newKit;
-            }
-        }
-
         private void saveButton_Click(object sender, EventArgs e)
         {
-            if (nameTextBox.Equals(""))
+            if (nameTextBox.Text == "")
             {
                 //Show warning prompt
+                MessageBox.Show("Please enter a name.", "Warning", MessageBoxButtons.OK);
             }
             else
             {
@@ -86,7 +73,7 @@ namespace CS_Jukebox
                     currentKit.Name = nameTextBox.Text;
                 }
 
-                Properties.SaveKits();
+                Properties.Save();
 
                 //Add some form of delegate method to invoke in MainForm.cs
                 Close();

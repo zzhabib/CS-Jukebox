@@ -27,6 +27,8 @@ namespace CS_Jukebox
 
         public static List<MusicKit> MusicKits = null;
 
+        private static string startDir;
+
         private static MusicKit selectedKit = null;
         private static string SelectedKitName = null;
 
@@ -47,7 +49,7 @@ namespace CS_Jukebox
         //Converts settings to json file then saves it
         public static void SaveProperties()
         {
-            string dir = Directory.GetCurrentDirectory() + PropertiesFilePath;
+            string dir = startDir + PropertiesFilePath;
 
             PropertiesFile propFile = new PropertiesFile();
             propFile.GameDir = GameDir;
@@ -65,7 +67,8 @@ namespace CS_Jukebox
         //Reads properties file then deserializes it
         public static void LoadProperties()
         {
-            string dir = Directory.GetCurrentDirectory() + PropertiesFilePath;
+            startDir = Directory.GetCurrentDirectory();
+            string dir = startDir + PropertiesFilePath;
             PropertiesFile propFile;
 
             try
@@ -84,10 +87,8 @@ namespace CS_Jukebox
 
         //Copies the config from local folder to CS:GO cfg folder
         public static void CreateConfig()
-        {
-            string configPath = Properties.GameDir + Properties.ConfigPath;
-            string root = Directory.GetCurrentDirectory();
-            string configSrc = root + Properties.ConfigName;
+        {string configPath = Properties.GameDir + Properties.ConfigPath;
+            string configSrc = startDir + Properties.ConfigName;
 
             if (File.Exists(configPath))
             {
@@ -102,21 +103,24 @@ namespace CS_Jukebox
 
         public static void SaveKits()
         {
-            string dir = Directory.GetCurrentDirectory() + MusicKitsPath;
+            string dir = startDir + MusicKitsPath;
 
             Directory.CreateDirectory(dir);
 
             foreach (MusicKit musicKit in MusicKits)
             {
+                Console.WriteLine("Saving song: " + musicKit.Name);
                 string kitDir = dir + @"\" + musicKit.Name + ".json";
+                Console.WriteLine(kitDir);
                 string jsonFile = JsonConvert.SerializeObject(musicKit);
+                Console.WriteLine(jsonFile);
                 File.WriteAllText(kitDir, jsonFile);
             }
         }
 
         public static void LoadKits()
         {
-            string dir = Directory.GetCurrentDirectory() + MusicKitsPath;
+            string dir = startDir + MusicKitsPath;
             MusicKits = new List<MusicKit>();
 
             if (Directory.Exists(dir))
@@ -168,7 +172,7 @@ namespace CS_Jukebox
         //Deletes the json file for a kit but not the kit itself
         public static void DeleteKitFile(string kitName)
         {
-            string dir = Directory.GetCurrentDirectory() + MusicKitsPath;
+            string dir = startDir + MusicKitsPath;
             string kitDir = dir + @"\" + kitName + ".json";
             File.Delete(kitDir);
         }

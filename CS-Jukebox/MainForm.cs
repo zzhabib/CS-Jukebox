@@ -80,7 +80,7 @@ namespace CS_Jukebox
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            Form musicSelector = new MusicSelector(new MusicKit(), true);
+            Form musicSelector = new MusicSelector(new MusicKit(""), true);
             musicSelector.ShowDialog(this);
             RefreshParameters();
         }

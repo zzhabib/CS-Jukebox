@@ -12,6 +12,12 @@ namespace CS_Jukebox
         public string Path;
         public int Volume;
 
+        public SongProfile()
+        {
+            Path = "";
+            Volume = 100;
+        }
+
         public SongProfile(string path, int volume)
         {
             Path = path;
