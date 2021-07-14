@@ -11,31 +11,33 @@ namespace CS_Jukebox
     public class Jukebox
     {
         private WindowsMediaPlayer player;
+        private SongProfile currentSong;
 
         public Jukebox()
         {
             player = new WindowsMediaPlayer();
         }
-
         public void PlaySong(string path)
         {
             player.URL = path;
             player.controls.play();
         }
 
-        public void PlaySong(SongProfile song)
+        public void PlaySong(SongProfile song, bool loop)
         {
             float volume = ((float)Properties.MasterVolume / 100) * (float)song.Volume;
+            currentSong = song;
 
-            Console.WriteLine("Playing song: " + song.Path + "\n" + "Volume: " + volume);
-            player.URL = song.Path;
             player.settings.volume = (int)volume;
+            player.URL = song.Path;
             player.controls.play();
+            player.settings.setMode("loop", loop);
         }
 
-        public void SetVolume(int vol)
+        public void UpdateVolume()
         {
-            player.settings.volume = vol;
+            float volume = ((float)Properties.MasterVolume / 100) * (float)currentSong.Volume;
+            player.settings.volume = (int)volume;
         }
     }
 }

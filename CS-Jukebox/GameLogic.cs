@@ -10,9 +10,10 @@ namespace CS_Jukebox
 {
     class GameLogic
     {
+        public Jukebox jukebox;
+
         private GameStateListener gsl;
         private MusicState musicState = MusicState.None;
-        private Jukebox jukebox;
 
         public GameLogic()
         {
@@ -48,7 +49,7 @@ namespace CS_Jukebox
             if (gs.Round.Phase == RoundPhase.FreezeTime && musicState != MusicState.FreezeTime)
             {
                 musicState = MusicState.FreezeTime;
-                jukebox.PlaySong(Properties.SelectedKit.freezeSong);
+                jukebox.PlaySong(Properties.SelectedKit.freezeSong, true);
                 Console.WriteLine("FreezeTime Begun");
             }
 
@@ -57,7 +58,7 @@ namespace CS_Jukebox
             if (gs.Round.Phase == RoundPhase.Live && musicState != MusicState.Live && musicState != MusicState.BombPlanted)
             {
                 musicState = MusicState.Live;
-                jukebox.PlaySong(Properties.SelectedKit.startSong);
+                jukebox.PlaySong(Properties.SelectedKit.startSong, false);
                 Console.WriteLine("Round Begun");
             }
 
@@ -68,24 +69,24 @@ namespace CS_Jukebox
                 if (gs.Round.WinTeam == RoundWinTeam.T && gs.Player.Team == PlayerTeam.T)
                 {
                     //win
-                    jukebox.PlaySong(Properties.SelectedKit.winSong);
+                    jukebox.PlaySong(Properties.SelectedKit.winSong, false);
                 }
                 else if (gs.Round.WinTeam == RoundWinTeam.CT && gs.Player.Team == PlayerTeam.CT)
                 {
                     //win
-                    jukebox.PlaySong(Properties.SelectedKit.winSong);
+                    jukebox.PlaySong(Properties.SelectedKit.winSong, false);
                 }
                 else
                 {
                     //lose
-                    jukebox.PlaySong(Properties.SelectedKit.loseSong);
+                    jukebox.PlaySong(Properties.SelectedKit.loseSong, false);
                 }
             }
 
             if (gs.Round.Bomb == BombState.Planted && musicState != MusicState.BombPlanted)
             {
                 musicState = MusicState.BombPlanted;
-                jukebox.PlaySong(Properties.SelectedKit.bombSong);
+                jukebox.PlaySong(Properties.SelectedKit.bombSong, false);
                 Console.WriteLine("Bomb Planted");
             }
         }

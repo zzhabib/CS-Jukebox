@@ -76,6 +76,7 @@ namespace CS_Jukebox
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
             Properties.MasterVolume = trackBar1.Value;
+            logic.jukebox.UpdateVolume();
         }
 
         private void addButton_Click(object sender, EventArgs e)
