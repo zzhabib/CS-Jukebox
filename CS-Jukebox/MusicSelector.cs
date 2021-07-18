@@ -28,21 +28,12 @@ namespace CS_Jukebox
         {
             nameTextBox.Text = currentKit.Name;
 
-            freezeTextBox.Text = currentKit.freezeSong.Path;
-            startTextBox.Text = currentKit.startSong.Path;
-            bombTextBox.Text = currentKit.bombSong.Path;
-            wonTextBox.Text = currentKit.winSong.Path;
-            lostTextBox.Text = currentKit.loseSong.Path;
-            MVPTextBox.Text = currentKit.MVPSong.Path;
-
-            freezeTrackBar.Value = currentKit.freezeSong.Volume;
-            startTrackBar.Value = currentKit.startSong.Volume;
-            bombTrackBar.Value = currentKit.bombSong.Volume;
-            wonTrackBar.Value = currentKit.winSong.Volume;
-            lostTrackBar.Value = currentKit.loseSong.Volume;
-            MVPTrackBar.Value = currentKit.MVPSong.Volume;
-
-            freezeStartTextBox.Text = currentKit.freezeSong.Start.ToString();
+            SetParamsFromSong(currentKit.freezeSong, freezeTextBox, freezeTrackBar, freezeStartTextBox);
+            SetParamsFromSong(currentKit.startSong, startTextBox, startTrackBar, startStartTextBox);
+            SetParamsFromSong(currentKit.bombSong, bombTextBox, bombTrackBar, bombStartTextBox);
+            SetParamsFromSong(currentKit.winSong, wonTextBox, wonTrackBar, wonStartTextBox);
+            SetParamsFromSong(currentKit.loseSong, lostTextBox, lostTrackBar, lostStartTextBox);
+            SetParamsFromSong(currentKit.MVPSong, MVPTextBox, MVPTrackBar, MVPStartTextBox);
         }
 
         private void saveButton_Click(object sender, EventArgs e)
@@ -54,13 +45,12 @@ namespace CS_Jukebox
             }
             else
             {
-                //currentKit.freezeSong = new SongProfile(freezeTextBox.Text, freezeTrackBar.Value);
                 currentKit.freezeSong = GetSongFromParams(freezeTextBox, freezeTrackBar, freezeStartTextBox);
-                currentKit.startSong = new SongProfile(startTextBox.Text, startTrackBar.Value);
-                currentKit.bombSong = new SongProfile(bombTextBox.Text, bombTrackBar.Value);
-                currentKit.winSong = new SongProfile(wonTextBox.Text, wonTrackBar.Value);
-                currentKit.loseSong = new SongProfile(lostTextBox.Text, lostTrackBar.Value);
-                currentKit.MVPSong = new SongProfile(MVPTextBox.Text, MVPTrackBar.Value);
+                currentKit.startSong = GetSongFromParams(startTextBox, startTrackBar, startStartTextBox);
+                currentKit.bombSong = GetSongFromParams(bombTextBox, bombTrackBar, bombStartTextBox);
+                currentKit.winSong = GetSongFromParams(wonTextBox, wonTrackBar, wonStartTextBox);
+                currentKit.loseSong = GetSongFromParams(lostTextBox, lostTrackBar, lostStartTextBox);
+                currentKit.MVPSong = GetSongFromParams(MVPTextBox, MVPTrackBar, MVPStartTextBox);
 
                 if (createMode)
                 {
@@ -89,6 +79,16 @@ namespace CS_Jukebox
             SongProfile newSong = new SongProfile(pathTextBox.Text, volumeTrackbar.Value);
             newSong.Start = startTextBox.Enabled ? int.Parse(startTextBox.Text) : 0;
             return newSong;
+        }
+
+        private void SetParamsFromSong(SongProfile songProfile,
+                                       TextBox pathTextBox,
+                                       TrackBar volumeTrackbar,
+                                       TextBox startTextBox)
+        {
+            pathTextBox.Text = songProfile.Path;
+            volumeTrackbar.Value = songProfile.Volume;
+            startTextBox.Text = songProfile.Start.ToString();
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
@@ -155,7 +155,52 @@ namespace CS_Jukebox
             OpenSongFile(MVPTextBox);
         }
 
-        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        private void freezeStartTextbox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+        (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void startStartTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+        (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void bombStartTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+        (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void wonStartTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+        (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void lostStartTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+        (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void MVPStartTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
         (e.KeyChar != '.'))

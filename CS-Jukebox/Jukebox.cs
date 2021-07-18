@@ -34,6 +34,8 @@ namespace CS_Jukebox
         //Play song for length or loop indefinitely
         public void PlaySong(SongProfile song, bool loop)
         {
+            if (song.Path == "") return;
+
             float volume = ((float)Properties.MasterVolume / 100) * (float)song.Volume;
             currentSong = song;
 

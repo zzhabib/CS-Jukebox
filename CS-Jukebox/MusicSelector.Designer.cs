@@ -38,22 +38,32 @@ namespace CS_Jukebox
             this.label2 = new System.Windows.Forms.Label();
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.startGroup = new System.Windows.Forms.GroupBox();
+            this.startStartTextBox = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.startTrackBar = new System.Windows.Forms.TrackBar();
             this.startButton = new System.Windows.Forms.Button();
             this.startTextBox = new System.Windows.Forms.TextBox();
             this.MVPGroup = new System.Windows.Forms.GroupBox();
+            this.MVPStartTextBox = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.MVPTrackBar = new System.Windows.Forms.TrackBar();
             this.MVPButton = new System.Windows.Forms.Button();
             this.MVPTextBox = new System.Windows.Forms.TextBox();
             this.lostGroup = new System.Windows.Forms.GroupBox();
+            this.lostStartTextBox = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.lostTrackBar = new System.Windows.Forms.TrackBar();
             this.lostButton = new System.Windows.Forms.Button();
             this.lostTextBox = new System.Windows.Forms.TextBox();
             this.wonGroup = new System.Windows.Forms.GroupBox();
+            this.wonStartTextBox = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.wonTrackBar = new System.Windows.Forms.TrackBar();
             this.wonButton = new System.Windows.Forms.Button();
             this.wonTextBox = new System.Windows.Forms.TextBox();
             this.bombGroup = new System.Windows.Forms.GroupBox();
+            this.bombStartTextBox = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.bombTrackBar = new System.Windows.Forms.TrackBar();
             this.bombButton = new System.Windows.Forms.Button();
             this.bombTextBox = new System.Windows.Forms.TextBox();
@@ -78,7 +88,7 @@ namespace CS_Jukebox
             // freezeButton
             // 
             this.freezeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.freezeButton.Location = new System.Drawing.Point(6, 77);
+            this.freezeButton.Location = new System.Drawing.Point(6, 61);
             this.freezeButton.Name = "freezeButton";
             this.freezeButton.Size = new System.Drawing.Size(75, 23);
             this.freezeButton.TabIndex = 1;
@@ -89,7 +99,7 @@ namespace CS_Jukebox
             // freezeTextBox
             // 
             this.freezeTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.freezeTextBox.Location = new System.Drawing.Point(98, 77);
+            this.freezeTextBox.Location = new System.Drawing.Point(98, 61);
             this.freezeTextBox.Name = "freezeTextBox";
             this.freezeTextBox.Size = new System.Drawing.Size(131, 23);
             this.freezeTextBox.TabIndex = 2;
@@ -104,7 +114,7 @@ namespace CS_Jukebox
             this.freezeGroup.Controls.Add(this.freezeTextBox);
             this.freezeGroup.Location = new System.Drawing.Point(12, 50);
             this.freezeGroup.Name = "freezeGroup";
-            this.freezeGroup.Size = new System.Drawing.Size(235, 106);
+            this.freezeGroup.Size = new System.Drawing.Size(235, 90);
             this.freezeGroup.TabIndex = 3;
             this.freezeGroup.TabStop = false;
             this.freezeGroup.Text = "Freeze Time:";
@@ -125,7 +135,7 @@ namespace CS_Jukebox
             this.freezeStartTextBox.PlaceholderText = "Seconds";
             this.freezeStartTextBox.Size = new System.Drawing.Size(55, 23);
             this.freezeStartTextBox.TabIndex = 5;
-            this.freezeStartTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.freezeStartTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.freezeStartTextbox_KeyPress);
             // 
             // freezeTrackBar
             // 
@@ -133,7 +143,7 @@ namespace CS_Jukebox
             | System.Windows.Forms.AnchorStyles.Right)));
             this.freezeTrackBar.AutoSize = false;
             this.freezeTrackBar.LargeChange = 10;
-            this.freezeTrackBar.Location = new System.Drawing.Point(6, 47);
+            this.freezeTrackBar.Location = new System.Drawing.Point(6, 37);
             this.freezeTrackBar.Maximum = 100;
             this.freezeTrackBar.Name = "freezeTrackBar";
             this.freezeTrackBar.Size = new System.Drawing.Size(217, 24);
@@ -161,15 +171,35 @@ namespace CS_Jukebox
             // 
             // startGroup
             // 
+            this.startGroup.Controls.Add(this.startStartTextBox);
+            this.startGroup.Controls.Add(this.label3);
             this.startGroup.Controls.Add(this.startTrackBar);
             this.startGroup.Controls.Add(this.startButton);
             this.startGroup.Controls.Add(this.startTextBox);
-            this.startGroup.Location = new System.Drawing.Point(18, 197);
+            this.startGroup.Location = new System.Drawing.Point(12, 146);
             this.startGroup.Name = "startGroup";
-            this.startGroup.Size = new System.Drawing.Size(235, 78);
+            this.startGroup.Size = new System.Drawing.Size(235, 90);
             this.startGroup.TabIndex = 9;
             this.startGroup.TabStop = false;
             this.startGroup.Text = "Round Start:";
+            // 
+            // startStartTextBox
+            // 
+            this.startStartTextBox.Location = new System.Drawing.Point(61, 16);
+            this.startStartTextBox.Name = "startStartTextBox";
+            this.startStartTextBox.PlaceholderText = "Seconds";
+            this.startStartTextBox.Size = new System.Drawing.Size(55, 23);
+            this.startStartTextBox.TabIndex = 8;
+            this.startStartTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.startStartTextBox_KeyPress);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 19);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(49, 15);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Start At:";
             // 
             // startTrackBar
             // 
@@ -177,10 +207,10 @@ namespace CS_Jukebox
             | System.Windows.Forms.AnchorStyles.Right)));
             this.startTrackBar.AutoSize = false;
             this.startTrackBar.LargeChange = 10;
-            this.startTrackBar.Location = new System.Drawing.Point(6, 22);
+            this.startTrackBar.Location = new System.Drawing.Point(6, 37);
             this.startTrackBar.Maximum = 100;
             this.startTrackBar.Name = "startTrackBar";
-            this.startTrackBar.Size = new System.Drawing.Size(223, 24);
+            this.startTrackBar.Size = new System.Drawing.Size(223, 23);
             this.startTrackBar.SmallChange = 5;
             this.startTrackBar.TabIndex = 3;
             this.startTrackBar.Tag = "";
@@ -190,7 +220,7 @@ namespace CS_Jukebox
             // startButton
             // 
             this.startButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.startButton.Location = new System.Drawing.Point(6, 49);
+            this.startButton.Location = new System.Drawing.Point(6, 61);
             this.startButton.Name = "startButton";
             this.startButton.Size = new System.Drawing.Size(75, 23);
             this.startButton.TabIndex = 1;
@@ -201,22 +231,42 @@ namespace CS_Jukebox
             // startTextBox
             // 
             this.startTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.startTextBox.Location = new System.Drawing.Point(98, 49);
+            this.startTextBox.Location = new System.Drawing.Point(98, 61);
             this.startTextBox.Name = "startTextBox";
             this.startTextBox.Size = new System.Drawing.Size(131, 23);
             this.startTextBox.TabIndex = 2;
             // 
             // MVPGroup
             // 
+            this.MVPGroup.Controls.Add(this.MVPStartTextBox);
+            this.MVPGroup.Controls.Add(this.label7);
             this.MVPGroup.Controls.Add(this.MVPTrackBar);
             this.MVPGroup.Controls.Add(this.MVPButton);
             this.MVPGroup.Controls.Add(this.MVPTextBox);
-            this.MVPGroup.Location = new System.Drawing.Point(253, 206);
+            this.MVPGroup.Location = new System.Drawing.Point(253, 241);
             this.MVPGroup.Name = "MVPGroup";
-            this.MVPGroup.Size = new System.Drawing.Size(235, 75);
+            this.MVPGroup.Size = new System.Drawing.Size(235, 90);
             this.MVPGroup.TabIndex = 13;
             this.MVPGroup.TabStop = false;
             this.MVPGroup.Text = "MVP:";
+            // 
+            // MVPStartTextBox
+            // 
+            this.MVPStartTextBox.Location = new System.Drawing.Point(61, 16);
+            this.MVPStartTextBox.Name = "MVPStartTextBox";
+            this.MVPStartTextBox.PlaceholderText = "Seconds";
+            this.MVPStartTextBox.Size = new System.Drawing.Size(55, 23);
+            this.MVPStartTextBox.TabIndex = 11;
+            this.MVPStartTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MVPStartTextBox_KeyPress);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 19);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(49, 15);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "Start At:";
             // 
             // MVPTrackBar
             // 
@@ -224,7 +274,7 @@ namespace CS_Jukebox
             | System.Windows.Forms.AnchorStyles.Right)));
             this.MVPTrackBar.AutoSize = false;
             this.MVPTrackBar.LargeChange = 10;
-            this.MVPTrackBar.Location = new System.Drawing.Point(6, 22);
+            this.MVPTrackBar.Location = new System.Drawing.Point(6, 37);
             this.MVPTrackBar.Maximum = 100;
             this.MVPTrackBar.Name = "MVPTrackBar";
             this.MVPTrackBar.Size = new System.Drawing.Size(223, 24);
@@ -237,7 +287,7 @@ namespace CS_Jukebox
             // MVPButton
             // 
             this.MVPButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.MVPButton.Location = new System.Drawing.Point(6, 46);
+            this.MVPButton.Location = new System.Drawing.Point(6, 61);
             this.MVPButton.Name = "MVPButton";
             this.MVPButton.Size = new System.Drawing.Size(75, 23);
             this.MVPButton.TabIndex = 1;
@@ -248,22 +298,42 @@ namespace CS_Jukebox
             // MVPTextBox
             // 
             this.MVPTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.MVPTextBox.Location = new System.Drawing.Point(104, 46);
+            this.MVPTextBox.Location = new System.Drawing.Point(104, 61);
             this.MVPTextBox.Name = "MVPTextBox";
             this.MVPTextBox.Size = new System.Drawing.Size(125, 23);
             this.MVPTextBox.TabIndex = 2;
             // 
             // lostGroup
             // 
+            this.lostGroup.Controls.Add(this.lostStartTextBox);
+            this.lostGroup.Controls.Add(this.label6);
             this.lostGroup.Controls.Add(this.lostTrackBar);
             this.lostGroup.Controls.Add(this.lostButton);
             this.lostGroup.Controls.Add(this.lostTextBox);
-            this.lostGroup.Location = new System.Drawing.Point(253, 128);
+            this.lostGroup.Location = new System.Drawing.Point(253, 146);
             this.lostGroup.Name = "lostGroup";
-            this.lostGroup.Size = new System.Drawing.Size(235, 78);
+            this.lostGroup.Size = new System.Drawing.Size(235, 90);
             this.lostGroup.TabIndex = 12;
             this.lostGroup.TabStop = false;
             this.lostGroup.Text = "Round Lost:";
+            // 
+            // lostStartTextBox
+            // 
+            this.lostStartTextBox.Location = new System.Drawing.Point(61, 16);
+            this.lostStartTextBox.Name = "lostStartTextBox";
+            this.lostStartTextBox.PlaceholderText = "Seconds";
+            this.lostStartTextBox.Size = new System.Drawing.Size(55, 23);
+            this.lostStartTextBox.TabIndex = 10;
+            this.lostStartTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.lostStartTextBox_KeyPress);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 19);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(49, 15);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "Start At:";
             // 
             // lostTrackBar
             // 
@@ -271,7 +341,7 @@ namespace CS_Jukebox
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lostTrackBar.AutoSize = false;
             this.lostTrackBar.LargeChange = 10;
-            this.lostTrackBar.Location = new System.Drawing.Point(6, 22);
+            this.lostTrackBar.Location = new System.Drawing.Point(6, 36);
             this.lostTrackBar.Maximum = 100;
             this.lostTrackBar.Name = "lostTrackBar";
             this.lostTrackBar.Size = new System.Drawing.Size(223, 24);
@@ -284,7 +354,7 @@ namespace CS_Jukebox
             // lostButton
             // 
             this.lostButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lostButton.Location = new System.Drawing.Point(6, 49);
+            this.lostButton.Location = new System.Drawing.Point(6, 61);
             this.lostButton.Name = "lostButton";
             this.lostButton.Size = new System.Drawing.Size(75, 23);
             this.lostButton.TabIndex = 1;
@@ -295,22 +365,42 @@ namespace CS_Jukebox
             // lostTextBox
             // 
             this.lostTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lostTextBox.Location = new System.Drawing.Point(98, 49);
+            this.lostTextBox.Location = new System.Drawing.Point(98, 61);
             this.lostTextBox.Name = "lostTextBox";
             this.lostTextBox.Size = new System.Drawing.Size(131, 23);
             this.lostTextBox.TabIndex = 2;
             // 
             // wonGroup
             // 
+            this.wonGroup.Controls.Add(this.wonStartTextBox);
+            this.wonGroup.Controls.Add(this.label5);
             this.wonGroup.Controls.Add(this.wonTrackBar);
             this.wonGroup.Controls.Add(this.wonButton);
             this.wonGroup.Controls.Add(this.wonTextBox);
             this.wonGroup.Location = new System.Drawing.Point(253, 50);
             this.wonGroup.Name = "wonGroup";
-            this.wonGroup.Size = new System.Drawing.Size(235, 78);
+            this.wonGroup.Size = new System.Drawing.Size(235, 90);
             this.wonGroup.TabIndex = 11;
             this.wonGroup.TabStop = false;
             this.wonGroup.Text = "Round Won:";
+            // 
+            // wonStartTextBox
+            // 
+            this.wonStartTextBox.Location = new System.Drawing.Point(61, 16);
+            this.wonStartTextBox.Name = "wonStartTextBox";
+            this.wonStartTextBox.PlaceholderText = "Seconds";
+            this.wonStartTextBox.Size = new System.Drawing.Size(55, 23);
+            this.wonStartTextBox.TabIndex = 9;
+            this.wonStartTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.wonStartTextBox_KeyPress);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 19);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(49, 15);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "Start At:";
             // 
             // wonTrackBar
             // 
@@ -318,7 +408,7 @@ namespace CS_Jukebox
             | System.Windows.Forms.AnchorStyles.Right)));
             this.wonTrackBar.AutoSize = false;
             this.wonTrackBar.LargeChange = 10;
-            this.wonTrackBar.Location = new System.Drawing.Point(6, 22);
+            this.wonTrackBar.Location = new System.Drawing.Point(6, 37);
             this.wonTrackBar.Maximum = 100;
             this.wonTrackBar.Name = "wonTrackBar";
             this.wonTrackBar.Size = new System.Drawing.Size(223, 24);
@@ -331,7 +421,7 @@ namespace CS_Jukebox
             // wonButton
             // 
             this.wonButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.wonButton.Location = new System.Drawing.Point(6, 49);
+            this.wonButton.Location = new System.Drawing.Point(6, 61);
             this.wonButton.Name = "wonButton";
             this.wonButton.Size = new System.Drawing.Size(75, 23);
             this.wonButton.TabIndex = 1;
@@ -342,22 +432,42 @@ namespace CS_Jukebox
             // wonTextBox
             // 
             this.wonTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.wonTextBox.Location = new System.Drawing.Point(98, 49);
+            this.wonTextBox.Location = new System.Drawing.Point(98, 61);
             this.wonTextBox.Name = "wonTextBox";
             this.wonTextBox.Size = new System.Drawing.Size(131, 23);
             this.wonTextBox.TabIndex = 2;
             // 
             // bombGroup
             // 
+            this.bombGroup.Controls.Add(this.bombStartTextBox);
+            this.bombGroup.Controls.Add(this.label4);
             this.bombGroup.Controls.Add(this.bombTrackBar);
             this.bombGroup.Controls.Add(this.bombButton);
             this.bombGroup.Controls.Add(this.bombTextBox);
-            this.bombGroup.Location = new System.Drawing.Point(12, 272);
+            this.bombGroup.Location = new System.Drawing.Point(12, 241);
             this.bombGroup.Name = "bombGroup";
-            this.bombGroup.Size = new System.Drawing.Size(235, 75);
+            this.bombGroup.Size = new System.Drawing.Size(235, 90);
             this.bombGroup.TabIndex = 10;
             this.bombGroup.TabStop = false;
             this.bombGroup.Text = "Bomb Planted:";
+            // 
+            // bombStartTextBox
+            // 
+            this.bombStartTextBox.Location = new System.Drawing.Point(61, 16);
+            this.bombStartTextBox.Name = "bombStartTextBox";
+            this.bombStartTextBox.PlaceholderText = "Seconds";
+            this.bombStartTextBox.Size = new System.Drawing.Size(55, 23);
+            this.bombStartTextBox.TabIndex = 8;
+            this.bombStartTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bombStartTextBox_KeyPress);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 19);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(49, 15);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Start At:";
             // 
             // bombTrackBar
             // 
@@ -365,7 +475,7 @@ namespace CS_Jukebox
             | System.Windows.Forms.AnchorStyles.Right)));
             this.bombTrackBar.AutoSize = false;
             this.bombTrackBar.LargeChange = 10;
-            this.bombTrackBar.Location = new System.Drawing.Point(6, 22);
+            this.bombTrackBar.Location = new System.Drawing.Point(6, 37);
             this.bombTrackBar.Maximum = 100;
             this.bombTrackBar.Name = "bombTrackBar";
             this.bombTrackBar.Size = new System.Drawing.Size(223, 24);
@@ -378,7 +488,7 @@ namespace CS_Jukebox
             // bombButton
             // 
             this.bombButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.bombButton.Location = new System.Drawing.Point(6, 46);
+            this.bombButton.Location = new System.Drawing.Point(6, 61);
             this.bombButton.Name = "bombButton";
             this.bombButton.Size = new System.Drawing.Size(75, 23);
             this.bombButton.TabIndex = 1;
@@ -389,7 +499,7 @@ namespace CS_Jukebox
             // bombTextBox
             // 
             this.bombTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.bombTextBox.Location = new System.Drawing.Point(98, 46);
+            this.bombTextBox.Location = new System.Drawing.Point(98, 61);
             this.bombTextBox.Name = "bombTextBox";
             this.bombTextBox.Size = new System.Drawing.Size(131, 23);
             this.bombTextBox.TabIndex = 2;
@@ -397,7 +507,7 @@ namespace CS_Jukebox
             // saveButton
             // 
             this.saveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.saveButton.Location = new System.Drawing.Point(12, 362);
+            this.saveButton.Location = new System.Drawing.Point(12, 340);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(75, 23);
             this.saveButton.TabIndex = 11;
@@ -408,7 +518,7 @@ namespace CS_Jukebox
             // cancelButton
             // 
             this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.cancelButton.Location = new System.Drawing.Point(444, 362);
+            this.cancelButton.Location = new System.Drawing.Point(413, 340);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
             this.cancelButton.TabIndex = 12;
@@ -438,7 +548,7 @@ namespace CS_Jukebox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(531, 391);
+            this.ClientSize = new System.Drawing.Size(500, 369);
             this.Controls.Add(this.MVPGroup);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.lostGroup);
@@ -509,5 +619,15 @@ namespace CS_Jukebox
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.TextBox freezeStartTextBox;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox startStartTextBox;
+        private System.Windows.Forms.TextBox MVPStartTextBox;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox lostStartTextBox;
+        private System.Windows.Forms.TextBox wonStartTextBox;
+        private System.Windows.Forms.TextBox bombStartTextBox;
     }
 }
