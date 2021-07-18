@@ -14,6 +14,7 @@ namespace CS_Jukebox
 
         private GameStateListener gsl;
         private MusicState musicState = MusicState.None;
+        private int playerMVPs = 0;
 
         public GameLogic()
         {
@@ -43,13 +44,14 @@ namespace CS_Jukebox
             if (gs.Map.JSON.Equals("{}") && musicState != MusicState.Menu)
             {
                 musicState = MusicState.Menu;
+                playerMVPs = 0;
                 Console.WriteLine("Main Menu");
             }
 
             if (gs.Round.Phase == RoundPhase.FreezeTime && musicState != MusicState.FreezeTime)
             {
                 musicState = MusicState.FreezeTime;
-                jukebox.PlaySong(Properties.SelectedKit.freezeSong, true);
+                jukebox.PlaySong(Properties.SelectedKit.freezeSong, false);
                 Console.WriteLine("FreezeTime Begun");
             }
 
@@ -68,13 +70,11 @@ namespace CS_Jukebox
 
                 if (gs.Round.WinTeam == RoundWinTeam.T && gs.Player.Team == PlayerTeam.T)
                 {
-                    //win
-                    jukebox.PlaySong(Properties.SelectedKit.winSong, false);
+                    RoundWin(gs);
                 }
                 else if (gs.Round.WinTeam == RoundWinTeam.CT && gs.Player.Team == PlayerTeam.CT)
                 {
-                    //win
-                    jukebox.PlaySong(Properties.SelectedKit.winSong, false);
+                    RoundWin(gs);
                 }
                 else
                 {
@@ -88,6 +88,20 @@ namespace CS_Jukebox
                 musicState = MusicState.BombPlanted;
                 jukebox.PlaySong(Properties.SelectedKit.bombSong, false);
                 Console.WriteLine("Bomb Planted");
+            }
+        }
+
+        private void RoundWin(GameState gs)
+        {
+            //Check if player was MVP of the round
+            if (gs.Player.MatchStats.MVPs > playerMVPs)
+            {
+                jukebox.PlaySong(Properties.SelectedKit.MVPSong, false);
+                playerMVPs = gs.Player.MatchStats.MVPs;
+            }
+            else
+            {
+                jukebox.PlaySong(Properties.SelectedKit.winSong, false);
             }
         }
     }
