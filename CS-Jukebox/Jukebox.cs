@@ -39,6 +39,7 @@ namespace CS_Jukebox
 
             player.settings.volume = (int)volume;
             player.URL = song.Path;
+            player.controls.currentPosition = song.Start;
             player.controls.play();
             player.settings.setMode("loop", loop);
         }
@@ -46,13 +47,7 @@ namespace CS_Jukebox
         //Play song with a determined amount of time in seconds
         public void PlaySong(SongProfile song, bool loop, int duration)
         {
-            float volume = ((float)Properties.MasterVolume / 100) * song.Volume;
-            currentSong = song;
-
-            player.settings.volume = (int)volume;
-            player.URL = song.Path;
-            player.controls.play();
-            player.settings.setMode("loop", loop);
+            PlaySong(song, loop);
 
             timerCount = 0;
             timerGoal = duration;

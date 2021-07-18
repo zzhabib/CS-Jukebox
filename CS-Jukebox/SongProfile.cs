@@ -11,6 +11,7 @@ namespace CS_Jukebox
     {
         public string Path;
         public int Volume;
+        public int Start;
 
         public SongProfile()
         {

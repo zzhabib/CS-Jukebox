@@ -41,6 +41,8 @@ namespace CS_Jukebox
             wonTrackBar.Value = currentKit.winSong.Volume;
             lostTrackBar.Value = currentKit.loseSong.Volume;
             MVPTrackBar.Value = currentKit.MVPSong.Volume;
+
+            freezeStartTextBox.Text = currentKit.freezeSong.Start.ToString();
         }
 
         private void saveButton_Click(object sender, EventArgs e)
@@ -52,7 +54,8 @@ namespace CS_Jukebox
             }
             else
             {
-                currentKit.freezeSong = new SongProfile(freezeTextBox.Text, freezeTrackBar.Value);
+                //currentKit.freezeSong = new SongProfile(freezeTextBox.Text, freezeTrackBar.Value);
+                currentKit.freezeSong = GetSongFromParams(freezeTextBox, freezeTrackBar, freezeStartTextBox);
                 currentKit.startSong = new SongProfile(startTextBox.Text, startTrackBar.Value);
                 currentKit.bombSong = new SongProfile(bombTextBox.Text, bombTrackBar.Value);
                 currentKit.winSong = new SongProfile(wonTextBox.Text, wonTrackBar.Value);
@@ -78,6 +81,14 @@ namespace CS_Jukebox
                 //Add some form of delegate method to invoke in MainForm.cs
                 Close();
             }
+        }
+
+        //Returns a new SongProfile based on values of given form controls
+        private SongProfile GetSongFromParams(TextBox pathTextBox, TrackBar volumeTrackbar, TextBox startTextBox)
+        {
+            SongProfile newSong = new SongProfile(pathTextBox.Text, volumeTrackbar.Value);
+            newSong.Start = startTextBox.Enabled ? int.Parse(startTextBox.Text) : 0;
+            return newSong;
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
@@ -142,6 +153,15 @@ namespace CS_Jukebox
         private void MVPButton_Click(object sender, EventArgs e)
         {
             OpenSongFile(MVPTextBox);
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+        (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
