@@ -7,7 +7,7 @@ Introducing CS-Jukebox, a tool that allows you to play your own custom music kit
 1. Download the latest Pre-Release [here](https://github.com/KingHabib/CS-Jukebox/releases/download/v0.1-alpha/CS-Jukebox.v0.1.zip) (Windows only).
 2. Extract the folder inside the zip.
 3. Launch CS-Jukebox.exe
-4. Jukebox will ask you to locate the root folder for CS:GO. This is the folder containing 
+4. Jukebox will ask you to locate the root folder for CS:GO. This is the folder containing csgo.exe
 
 # How to create kits
 Creating a music kit can be easily done inside CS-Jukebox
