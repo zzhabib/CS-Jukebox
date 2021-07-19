@@ -1,6 +1,8 @@
 # CS-Jukebox
 Introducing CS-Jukebox, a tool that allows you to play your own custom music kits in Counter-Strike: Global Offensive!
 
+![image](https://user-images.githubusercontent.com/26579319/126086799-31e2da1a-1521-45fe-8b55-1325e49fafd8.png)
+
 # Getting Started
 1. Download the latest Pre-Release [here](https://github.com/KingHabib/CS-Jukebox/releases/download/v0.1-alpha/CS-Jukebox.v0.1.zip) (Windows only).
 2. Extract the folder inside the zip.
