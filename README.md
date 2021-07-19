@@ -15,7 +15,7 @@ Creating a music kit can be easily done inside CS-Jukebox
 2. Create a name for the music kit.
 3. For each song, click browse to navigate to a song downloaded on your computer.
 4. Adjust any controls such as Volume or Start Position.
-5. Click save and use the dropdown at the top to select your music kit.
+5. Click Save and enjoy your music kit.
 
 # How it works
 CS-Jukebox works by using CS:GO's official <a href="https://developer.valvesoftware.com/wiki/Counter-Strike:_Global_Offensive_Game_State_Integration">GameState Integration</a>
