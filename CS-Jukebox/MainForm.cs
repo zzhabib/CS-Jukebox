@@ -33,7 +33,7 @@ namespace CS_Jukebox
             //popup so that user can browse to it.
             if (Properties.GameDir == null)
             {
-                Form dirPopup = new GamePathForm(); //Pass method to start game listener
+                Form dirPopup = new GamePathForm();
                 dirPopup.ShowDialog(this);
             }
 
@@ -104,6 +104,13 @@ namespace CS_Jukebox
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Properties.Save();
+        }
+
+        private void directoryButton_Click(object sender, EventArgs e)
+        {
+            Form dirPopup = new GamePathForm();
+            dirPopup.ShowDialog(this);
+            RefreshParameters();
         }
     }
 }

@@ -33,17 +33,18 @@ namespace CS_Jukebox
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.musicComboBox = new System.Windows.Forms.ComboBox();
             this.addButton = new System.Windows.Forms.Button();
-            this.settingsButton = new System.Windows.Forms.Button();
+            this.directoryButton = new System.Windows.Forms.Button();
             this.editButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
             // trackBar1
             // 
-            this.trackBar1.Location = new System.Drawing.Point(12, 92);
+            this.trackBar1.AutoSize = false;
+            this.trackBar1.Location = new System.Drawing.Point(12, 41);
             this.trackBar1.Maximum = 100;
             this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(261, 45);
+            this.trackBar1.Size = new System.Drawing.Size(261, 24);
             this.trackBar1.TabIndex = 0;
             this.trackBar1.TickStyle = System.Windows.Forms.TickStyle.None;
             this.trackBar1.Value = 70;
@@ -68,20 +69,21 @@ namespace CS_Jukebox
             // 
             this.addButton.Location = new System.Drawing.Point(139, 11);
             this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(58, 23);
+            this.addButton.Size = new System.Drawing.Size(70, 23);
             this.addButton.TabIndex = 4;
             this.addButton.Text = "Add";
             this.addButton.UseVisualStyleBackColor = true;
             this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
-            // settingsButton
+            // directoryButton
             // 
-            this.settingsButton.Location = new System.Drawing.Point(12, 41);
-            this.settingsButton.Name = "settingsButton";
-            this.settingsButton.Size = new System.Drawing.Size(58, 23);
-            this.settingsButton.TabIndex = 5;
-            this.settingsButton.Text = "Settings";
-            this.settingsButton.UseVisualStyleBackColor = true;
+            this.directoryButton.Location = new System.Drawing.Point(12, 100);
+            this.directoryButton.Name = "directoryButton";
+            this.directoryButton.Size = new System.Drawing.Size(121, 23);
+            this.directoryButton.TabIndex = 5;
+            this.directoryButton.Text = "Change Directory...";
+            this.directoryButton.UseVisualStyleBackColor = true;
+            this.directoryButton.Click += new System.EventHandler(this.directoryButton_Click);
             // 
             // editButton
             // 
@@ -99,7 +101,7 @@ namespace CS_Jukebox
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(285, 135);
             this.Controls.Add(this.editButton);
-            this.Controls.Add(this.settingsButton);
+            this.Controls.Add(this.directoryButton);
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.musicComboBox);
             this.Controls.Add(this.trackBar1);
@@ -108,7 +110,6 @@ namespace CS_Jukebox
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -117,7 +118,7 @@ namespace CS_Jukebox
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.ComboBox musicComboBox;
         private System.Windows.Forms.Button addButton;
-        private System.Windows.Forms.Button settingsButton;
+        private System.Windows.Forms.Button directoryButton;
         private System.Windows.Forms.Button editButton;
     }
 }
