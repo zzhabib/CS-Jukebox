@@ -34,6 +34,8 @@ namespace CS_Jukebox
             SetParamsFromSong(currentKit.winSong, wonTextBox, wonTrackBar, wonStartTextBox);
             SetParamsFromSong(currentKit.loseSong, lostTextBox, lostTrackBar, lostStartTextBox);
             SetParamsFromSong(currentKit.MVPSong, MVPTextBox, MVPTrackBar, MVPStartTextBox);
+            SetParamsFromSong(currentKit.bombTenSecSong, bombTenSecTextBox, bombTenSecTrackBar, bombTenSecStartBox);
+            SetParamsFromSong(currentKit.roundTenSecSong, roundTenSecTextBox, roundTenSecTrackBar, roundTenSecStartBox);
         }
 
         private void saveButton_Click(object sender, EventArgs e)
@@ -51,6 +53,8 @@ namespace CS_Jukebox
                 currentKit.winSong = GetSongFromParams(wonTextBox, wonTrackBar, wonStartTextBox);
                 currentKit.loseSong = GetSongFromParams(lostTextBox, lostTrackBar, lostStartTextBox);
                 currentKit.MVPSong = GetSongFromParams(MVPTextBox, MVPTrackBar, MVPStartTextBox);
+                currentKit.bombTenSecSong = GetSongFromParams(bombTenSecTextBox, bombTenSecTrackBar, bombTenSecStartBox);
+                currentKit.roundTenSecSong = GetSongFromParams(roundTenSecTextBox, roundTenSecTrackBar, roundTenSecStartBox);
 
                 if (createMode)
                 {
@@ -156,6 +160,16 @@ namespace CS_Jukebox
             OpenSongFile(MVPTextBox);
         }
 
+        private void bombTenSecButton_Click(object sender, EventArgs e)
+        {
+            OpenSongFile(bombTenSecTextBox);
+        }
+
+        private void roundTenSecButton_Click(object sender, EventArgs e)
+        {
+            OpenSongFile(roundTenSecTextBox);
+        }
+
         private void freezeStartTextbox_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
@@ -202,6 +216,24 @@ namespace CS_Jukebox
         }
 
         private void MVPStartTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+        (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void bombTenSecStartBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+        (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void roundTenSecStartBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
         (e.KeyChar != '.'))

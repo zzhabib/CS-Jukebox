@@ -71,6 +71,18 @@ namespace CS_Jukebox
             this.cancelButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.bombTenSecBox1 = new System.Windows.Forms.GroupBox();
+            this.bombTenSecStartBox = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.bombTenSecTrackBar = new System.Windows.Forms.TrackBar();
+            this.bombTenSecButton = new System.Windows.Forms.Button();
+            this.bombTenSecTextBox = new System.Windows.Forms.TextBox();
+            this.roundTenSecBox = new System.Windows.Forms.GroupBox();
+            this.roundTenSecStartBox = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.roundTenSecTrackBar = new System.Windows.Forms.TrackBar();
+            this.roundTenSecButton = new System.Windows.Forms.Button();
+            this.roundTenSecTextBox = new System.Windows.Forms.TextBox();
             this.freezeGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.freezeTrackBar)).BeginInit();
             this.startGroup.SuspendLayout();
@@ -83,6 +95,10 @@ namespace CS_Jukebox
             ((System.ComponentModel.ISupportInitialize)(this.wonTrackBar)).BeginInit();
             this.bombGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bombTrackBar)).BeginInit();
+            this.bombTenSecBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bombTenSecTrackBar)).BeginInit();
+            this.roundTenSecBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.roundTenSecTrackBar)).BeginInit();
             this.SuspendLayout();
             // 
             // freezeButton
@@ -507,7 +523,7 @@ namespace CS_Jukebox
             // saveButton
             // 
             this.saveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.saveButton.Location = new System.Drawing.Point(12, 340);
+            this.saveButton.Location = new System.Drawing.Point(12, 434);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(75, 23);
             this.saveButton.TabIndex = 11;
@@ -518,7 +534,7 @@ namespace CS_Jukebox
             // cancelButton
             // 
             this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.cancelButton.Location = new System.Drawing.Point(413, 340);
+            this.cancelButton.Location = new System.Drawing.Point(413, 434);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
             this.cancelButton.TabIndex = 12;
@@ -544,11 +560,147 @@ namespace CS_Jukebox
             this.openFileDialog1.ReadOnlyChecked = true;
             this.openFileDialog1.ShowReadOnly = true;
             // 
+            // bombTenSecBox1
+            // 
+            this.bombTenSecBox1.Controls.Add(this.bombTenSecStartBox);
+            this.bombTenSecBox1.Controls.Add(this.label8);
+            this.bombTenSecBox1.Controls.Add(this.bombTenSecTrackBar);
+            this.bombTenSecBox1.Controls.Add(this.bombTenSecButton);
+            this.bombTenSecBox1.Controls.Add(this.bombTenSecTextBox);
+            this.bombTenSecBox1.Location = new System.Drawing.Point(12, 337);
+            this.bombTenSecBox1.Name = "bombTenSecBox1";
+            this.bombTenSecBox1.Size = new System.Drawing.Size(235, 90);
+            this.bombTenSecBox1.TabIndex = 15;
+            this.bombTenSecBox1.TabStop = false;
+            this.bombTenSecBox1.Text = "Bomb Ten Seconds:";
+            // 
+            // bombTenSecStartBox
+            // 
+            this.bombTenSecStartBox.Location = new System.Drawing.Point(61, 16);
+            this.bombTenSecStartBox.Name = "bombTenSecStartBox";
+            this.bombTenSecStartBox.PlaceholderText = "Seconds";
+            this.bombTenSecStartBox.Size = new System.Drawing.Size(55, 23);
+            this.bombTenSecStartBox.TabIndex = 8;
+            this.bombTenSecStartBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bombTenSecStartBox_KeyPress);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 19);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(49, 15);
+            this.label8.TabIndex = 7;
+            this.label8.Text = "Start At:";
+            // 
+            // bombTenSecTrackBar
+            // 
+            this.bombTenSecTrackBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bombTenSecTrackBar.AutoSize = false;
+            this.bombTenSecTrackBar.LargeChange = 10;
+            this.bombTenSecTrackBar.Location = new System.Drawing.Point(6, 37);
+            this.bombTenSecTrackBar.Maximum = 100;
+            this.bombTenSecTrackBar.Name = "bombTenSecTrackBar";
+            this.bombTenSecTrackBar.Size = new System.Drawing.Size(223, 24);
+            this.bombTenSecTrackBar.SmallChange = 5;
+            this.bombTenSecTrackBar.TabIndex = 3;
+            this.bombTenSecTrackBar.Tag = "";
+            this.bombTenSecTrackBar.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.bombTenSecTrackBar.Value = 100;
+            // 
+            // bombTenSecButton
+            // 
+            this.bombTenSecButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.bombTenSecButton.Location = new System.Drawing.Point(6, 61);
+            this.bombTenSecButton.Name = "bombTenSecButton";
+            this.bombTenSecButton.Size = new System.Drawing.Size(75, 23);
+            this.bombTenSecButton.TabIndex = 1;
+            this.bombTenSecButton.Text = "Browse";
+            this.bombTenSecButton.UseVisualStyleBackColor = true;
+            this.bombTenSecButton.Click += new System.EventHandler(this.bombTenSecButton_Click);
+            // 
+            // bombTenSecTextBox
+            // 
+            this.bombTenSecTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bombTenSecTextBox.Location = new System.Drawing.Point(98, 61);
+            this.bombTenSecTextBox.Name = "bombTenSecTextBox";
+            this.bombTenSecTextBox.Size = new System.Drawing.Size(131, 23);
+            this.bombTenSecTextBox.TabIndex = 2;
+            // 
+            // roundTenSecBox
+            // 
+            this.roundTenSecBox.Controls.Add(this.roundTenSecStartBox);
+            this.roundTenSecBox.Controls.Add(this.label9);
+            this.roundTenSecBox.Controls.Add(this.roundTenSecTrackBar);
+            this.roundTenSecBox.Controls.Add(this.roundTenSecButton);
+            this.roundTenSecBox.Controls.Add(this.roundTenSecTextBox);
+            this.roundTenSecBox.Location = new System.Drawing.Point(253, 337);
+            this.roundTenSecBox.Name = "roundTenSecBox";
+            this.roundTenSecBox.Size = new System.Drawing.Size(235, 90);
+            this.roundTenSecBox.TabIndex = 16;
+            this.roundTenSecBox.TabStop = false;
+            this.roundTenSecBox.Text = "Round Ten Seconds:";
+            // 
+            // roundTenSecStartBox
+            // 
+            this.roundTenSecStartBox.Location = new System.Drawing.Point(61, 16);
+            this.roundTenSecStartBox.Name = "roundTenSecStartBox";
+            this.roundTenSecStartBox.PlaceholderText = "Seconds";
+            this.roundTenSecStartBox.Size = new System.Drawing.Size(55, 23);
+            this.roundTenSecStartBox.TabIndex = 8;
+            this.roundTenSecStartBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.roundTenSecStartBox_KeyPress);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(6, 19);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(49, 15);
+            this.label9.TabIndex = 7;
+            this.label9.Text = "Start At:";
+            // 
+            // roundTenSecTrackBar
+            // 
+            this.roundTenSecTrackBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.roundTenSecTrackBar.AutoSize = false;
+            this.roundTenSecTrackBar.LargeChange = 10;
+            this.roundTenSecTrackBar.Location = new System.Drawing.Point(6, 37);
+            this.roundTenSecTrackBar.Maximum = 100;
+            this.roundTenSecTrackBar.Name = "roundTenSecTrackBar";
+            this.roundTenSecTrackBar.Size = new System.Drawing.Size(223, 24);
+            this.roundTenSecTrackBar.SmallChange = 5;
+            this.roundTenSecTrackBar.TabIndex = 3;
+            this.roundTenSecTrackBar.Tag = "";
+            this.roundTenSecTrackBar.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.roundTenSecTrackBar.Value = 100;
+            // 
+            // roundTenSecButton
+            // 
+            this.roundTenSecButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.roundTenSecButton.Location = new System.Drawing.Point(6, 61);
+            this.roundTenSecButton.Name = "roundTenSecButton";
+            this.roundTenSecButton.Size = new System.Drawing.Size(75, 23);
+            this.roundTenSecButton.TabIndex = 1;
+            this.roundTenSecButton.Text = "Browse";
+            this.roundTenSecButton.UseVisualStyleBackColor = true;
+            this.roundTenSecButton.Click += new System.EventHandler(this.roundTenSecButton_Click);
+            // 
+            // roundTenSecTextBox
+            // 
+            this.roundTenSecTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.roundTenSecTextBox.Location = new System.Drawing.Point(98, 61);
+            this.roundTenSecTextBox.Name = "roundTenSecTextBox";
+            this.roundTenSecTextBox.Size = new System.Drawing.Size(131, 23);
+            this.roundTenSecTextBox.TabIndex = 2;
+            // 
             // MusicSelector
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(500, 369);
+            this.ClientSize = new System.Drawing.Size(500, 463);
+            this.Controls.Add(this.roundTenSecBox);
+            this.Controls.Add(this.bombTenSecBox1);
             this.Controls.Add(this.MVPGroup);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.lostGroup);
@@ -581,6 +733,12 @@ namespace CS_Jukebox
             this.bombGroup.ResumeLayout(false);
             this.bombGroup.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bombTrackBar)).EndInit();
+            this.bombTenSecBox1.ResumeLayout(false);
+            this.bombTenSecBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bombTenSecTrackBar)).EndInit();
+            this.roundTenSecBox.ResumeLayout(false);
+            this.roundTenSecBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.roundTenSecTrackBar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -629,5 +787,17 @@ namespace CS_Jukebox
         private System.Windows.Forms.TextBox lostStartTextBox;
         private System.Windows.Forms.TextBox wonStartTextBox;
         private System.Windows.Forms.TextBox bombStartTextBox;
+        private System.Windows.Forms.GroupBox bombTenSecBox1;
+        private System.Windows.Forms.TextBox bombTenSecStartBox;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TrackBar bombTenSecTrackBar;
+        private System.Windows.Forms.Button bombTenSecButton;
+        private System.Windows.Forms.TextBox bombTenSecTextBox;
+        private System.Windows.Forms.GroupBox roundTenSecBox;
+        private System.Windows.Forms.TextBox roundTenSecStartBox;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TrackBar roundTenSecTrackBar;
+        private System.Windows.Forms.Button roundTenSecButton;
+        private System.Windows.Forms.TextBox roundTenSecTextBox;
     }
 }
