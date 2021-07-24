@@ -154,6 +154,7 @@ namespace CS_Jukebox
                 if (roundTime - currentRoundTime == 10)
                 {
                     Console.WriteLine("Ten Seconds left on round");
+                    jukebox.PlaySong(Properties.SelectedKit.roundTenSecSong, false);
                 }
             }
             else if (musicState == MusicState.BombPlanted)
@@ -163,6 +164,7 @@ namespace CS_Jukebox
                 if (bombTime - currentBombTime == 10)
                 {
                     Console.WriteLine("Ten Seconds left on bomb");
+                    jukebox.PlaySong(Properties.SelectedKit.bombTenSecSong, false);
                 }
             }
         }
