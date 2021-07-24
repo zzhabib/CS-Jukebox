@@ -81,6 +81,7 @@ namespace CS_Jukebox
             return newSong;
         }
 
+        //Sets parameters of controls from song
         private void SetParamsFromSong(SongProfile songProfile,
                                        TextBox pathTextBox,
                                        TrackBar volumeTrackbar,
