@@ -97,6 +97,7 @@ namespace CS_Jukebox
             this.Controls.Add(this.browseButton);
             this.Controls.Add(this.dirTextBox);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "GamePathForm";
             this.Text = "Select Game Directory";
             this.ResumeLayout(false);

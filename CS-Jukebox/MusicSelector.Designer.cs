@@ -789,6 +789,7 @@ namespace CS_Jukebox
             this.Controls.Add(this.freezeGroup);
             this.Controls.Add(this.nameTextBox);
             this.Controls.Add(this.label2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "MusicSelector";
             this.Text = "Music Selector";
             this.Load += new System.EventHandler(this.MusicSelector_Load);

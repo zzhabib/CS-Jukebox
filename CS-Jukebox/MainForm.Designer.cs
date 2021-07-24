@@ -105,6 +105,7 @@ namespace CS_Jukebox
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.musicComboBox);
             this.Controls.Add(this.trackBar1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "MainForm";
             this.Text = "CS Jukebox";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);

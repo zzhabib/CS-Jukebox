@@ -11,6 +11,7 @@ namespace CS_Jukebox
         public MusicSelector(MusicKit newKit, bool? createKit)
         {
             InitializeComponent();
+            MaximizeBox = false;
 
             if (createKit.HasValue) createMode = createKit.Value;
             currentKit = newKit;

@@ -26,6 +26,7 @@ namespace CS_Jukebox
         {
             InitializeComponent();
             AllocConsole(); //Enable console
+            MaximizeBox = false;
 
             Properties.Load();
             
@@ -34,9 +35,9 @@ namespace CS_Jukebox
             if (Properties.GameDir == null)
             {
                 Form dirPopup = new GamePathForm();
+                dirPopup.Location = this.Location;
                 dirPopup.ShowDialog(this);
             }
-
             Start();
         }
 
@@ -82,6 +83,7 @@ namespace CS_Jukebox
         private void addButton_Click(object sender, EventArgs e)
         {
             Form musicSelector = new MusicSelector(new MusicKit(""), true);
+            musicSelector.Location = this.Location;
             musicSelector.ShowDialog(this);
             RefreshParameters();
         }
@@ -91,6 +93,7 @@ namespace CS_Jukebox
             if (Properties.SelectedKit != null)
             {
                 Form musicSelector = new MusicSelector(Properties.SelectedKit, false);
+                musicSelector.Location = this.Location;
                 musicSelector.ShowDialog(this);
                 RefreshParameters();
             }
@@ -109,6 +112,7 @@ namespace CS_Jukebox
         private void directoryButton_Click(object sender, EventArgs e)
         {
             Form dirPopup = new GamePathForm();
+            dirPopup.Location = this.Location;
             dirPopup.ShowDialog(this);
             RefreshParameters();
         }

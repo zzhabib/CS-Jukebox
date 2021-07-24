@@ -18,6 +18,8 @@ namespace CS_Jukebox
         public GamePathForm()
         {
             InitializeComponent();
+            MaximizeBox = false;
+            MinimizeBox = false;
         }
 
         //Open folder browser dialog
