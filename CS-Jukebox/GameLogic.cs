@@ -69,7 +69,16 @@ namespace CS_Jukebox
                 Console.WriteLine("FreezeTime Begun");
             }
 
-            if (musicState == MusicState.Menu) return;
+            if (musicState == MusicState.Menu)
+            {
+                if (gs.Round.Phase == RoundPhase.Live)
+                {
+                    //Fade out main menu song
+                    Console.WriteLine("Stopping main menu song");
+                    jukebox.Stop();
+                }
+                return;
+            }
 
             if (gs.Round.Phase == RoundPhase.Live && musicState != MusicState.Live && musicState != MusicState.BombPlanted)
             {

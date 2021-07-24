@@ -12,6 +12,7 @@ namespace CS_Jukebox
         private Timer fadeTimer;
 
         private bool isPlaying = false;
+        private bool shouldStop = false;
         private int timerCount = 0;
         private int timerGoal = 0;
         private int active = 0;
@@ -64,6 +65,13 @@ namespace CS_Jukebox
             player.settings.volume = (int)volume;
         }
 
+        //Sets shouldStop to true so that on the next on the next timer tick,
+        //StopSong() will be called. The fadeTimer only starts if it is done like this.
+        public void Stop()
+        {
+            shouldStop = true;
+        }
+
         private void StopSong()
         {
             int fadeTime = 2;
@@ -85,6 +93,7 @@ namespace CS_Jukebox
             {
                 fadeVolume -= volumeIncrement;
                 player.settings.volume = (int)fadeVolume;
+                Console.WriteLine(fadeVolume);
             }
             else
             {
@@ -105,6 +114,12 @@ namespace CS_Jukebox
         private void TimerTick(object sender, EventArgs e)
         {
             timerCount += 1;
+
+            if (shouldStop)
+            {
+                StopSong();
+                shouldStop = false;
+            }
 
             if (isPlaying && timerCount >= timerGoal)
             {
