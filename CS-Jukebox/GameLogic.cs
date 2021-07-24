@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using CSGSI;
 using CSGSI.Nodes;
 
@@ -15,11 +16,16 @@ namespace CS_Jukebox
         private GameStateListener gsl;
         private MusicState musicState = MusicState.None;
         private int playerMVPs = 0;
+        private int roundTime = 115;
+        private int bombTime = 45;
+        private int currentRoundTime = 0;
+        private int currentBombTime = 0;
 
         public GameLogic()
         {
             jukebox = new Jukebox();
             StartGameListener();
+            SetupTimer();
         }
 
         void StartGameListener()
@@ -50,8 +56,15 @@ namespace CS_Jukebox
 
             if (gs.Round.Phase == RoundPhase.FreezeTime && musicState != MusicState.FreezeTime)
             {
+                if (musicState == MusicState.Menu)
+                {
+                    JoinedGame(gs);
+                }
+
                 musicState = MusicState.FreezeTime;
                 jukebox.PlaySong(Properties.SelectedKit.freezeSong, false);
+                currentRoundTime = 0;
+                currentBombTime = 0;
                 Console.WriteLine("FreezeTime Begun");
             }
 
@@ -91,6 +104,25 @@ namespace CS_Jukebox
             }
         }
 
+        private void JoinedGame(GameState gs)
+        {
+            switch (gs.Map.Mode)
+            {
+                case MapMode.Casual:
+                    roundTime = 120;
+                    bombTime = 45;
+                    break;
+                case MapMode.Competitive:
+                    roundTime = 115;
+                    bombTime = 40;
+                    break;
+                default:
+                    roundTime = 120;
+                    bombTime = 45;
+                    break;
+            }
+        }
+
         private void RoundWin(GameState gs)
         {
             //Check if player was MVP of the round
@@ -102,6 +134,36 @@ namespace CS_Jukebox
             else
             {
                 jukebox.PlaySong(Properties.SelectedKit.winSong, false);
+            }
+        }
+
+        private void SetupTimer()
+        {
+            Timer timer = new Timer();
+            timer.Interval = 1000;
+            timer.Tick += new EventHandler(TimerTick);
+            timer.Start();
+        }
+
+        private void TimerTick(object sender, EventArgs e)
+        {
+            if (musicState == MusicState.Live)
+            {
+                currentRoundTime++;
+
+                if (roundTime - currentRoundTime == 10)
+                {
+                    Console.WriteLine("Ten Seconds left on round");
+                }
+            }
+            else if (musicState == MusicState.BombPlanted)
+            {
+                currentBombTime++;
+
+                if (bombTime - currentBombTime == 10)
+                {
+                    Console.WriteLine("Ten Seconds left on bomb");
+                }
             }
         }
     }
