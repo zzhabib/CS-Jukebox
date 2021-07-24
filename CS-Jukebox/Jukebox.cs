@@ -9,12 +9,13 @@ namespace CS_Jukebox
         private WindowsMediaPlayer player;
         private SongProfile currentSong;
 
-        private Timer songTimer;
         private Timer fadeTimer;
 
         private bool isPlaying = false;
         private int timerCount = 0;
         private int timerGoal = 0;
+        private int active = 0;
+        private int delayedCount = 0;
         private float fadeVolume;
         private float volumeIncrement; //Incremental change in volume when fading out song.
 
@@ -36,7 +37,7 @@ namespace CS_Jukebox
         {
             if (song.Path == "") return;
 
-            float volume = ((float)Properties.MasterVolume / 100) * (float)song.Volume;
+            float volume = ((float)Properties.MasterVolume / 100) * (float)song.Volume * active;
             currentSong = song;
 
             player.settings.volume = (int)volume;
@@ -58,7 +59,7 @@ namespace CS_Jukebox
 
         public void UpdateVolume()
         {
-            float volume = ((float)Properties.MasterVolume / 100) * currentSong.Volume;
+            float volume = ((float)Properties.MasterVolume / 100) * currentSong.Volume * active;
             player.settings.volume = (int)volume;
         }
 
@@ -94,10 +95,10 @@ namespace CS_Jukebox
 
         private void SetupTimer()
         {
-            Timer secondTimer = new Timer();
-            secondTimer.Interval = 1000;
-            secondTimer.Tick += new EventHandler(TimerTick);
-            secondTimer.Start();
+            Timer songTimer = new Timer();
+            songTimer.Interval = 1000;
+            songTimer.Tick += new EventHandler(TimerTick);
+            songTimer.Start();
         }
 
         private void TimerTick(object sender, EventArgs e)
@@ -107,6 +108,25 @@ namespace CS_Jukebox
             if (isPlaying && timerCount >= timerGoal)
             {
                 StopSong();
+            }
+
+            //Check if csgo is focused
+            if (WinAPI.GetActiveProcess() == "csgo")
+            {
+                active = 1;
+            }
+            else
+            {
+                active = 0;
+            }
+
+            if (delayedCount >= 2)
+            {
+                UpdateVolume();
+            }
+            else
+            {
+                delayedCount++;
             }
         }
     }
