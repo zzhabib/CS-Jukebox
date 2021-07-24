@@ -59,6 +59,7 @@ namespace CS_Jukebox
 
         public void UpdateVolume()
         {
+            if (currentSong == null) return;
             float volume = ((float)Properties.MasterVolume / 100) * currentSong.Volume * active;
             player.settings.volume = (int)volume;
         }

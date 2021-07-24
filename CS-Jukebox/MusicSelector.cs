@@ -36,6 +36,7 @@ namespace CS_Jukebox
             SetParamsFromSong(currentKit.MVPSong, MVPTextBox, MVPTrackBar, MVPStartTextBox);
             SetParamsFromSong(currentKit.bombTenSecSong, bombTenSecTextBox, bombTenSecTrackBar, bombTenSecStartBox);
             SetParamsFromSong(currentKit.roundTenSecSong, roundTenSecTextBox, roundTenSecTrackBar, roundTenSecStartBox);
+            SetParamsFromSong(currentKit.mainMenuSong, menuTextBox, menuTrackBar, menuStartTextBox);
         }
 
         private void saveButton_Click(object sender, EventArgs e)
@@ -55,6 +56,7 @@ namespace CS_Jukebox
                 currentKit.MVPSong = GetSongFromParams(MVPTextBox, MVPTrackBar, MVPStartTextBox);
                 currentKit.bombTenSecSong = GetSongFromParams(bombTenSecTextBox, bombTenSecTrackBar, bombTenSecStartBox);
                 currentKit.roundTenSecSong = GetSongFromParams(roundTenSecTextBox, roundTenSecTrackBar, roundTenSecStartBox);
+                currentKit.mainMenuSong = GetSongFromParams(menuTextBox, menuTrackBar, menuStartTextBox);
 
                 if (createMode)
                 {
@@ -170,6 +172,11 @@ namespace CS_Jukebox
             OpenSongFile(roundTenSecTextBox);
         }
 
+        private void menuButton_Click(object sender, EventArgs e)
+        {
+            OpenSongFile(menuTextBox);
+        }
+
         private void freezeStartTextbox_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
@@ -234,6 +241,15 @@ namespace CS_Jukebox
         }
 
         private void roundTenSecStartBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+        (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void menuStartTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
         (e.KeyChar != '.'))

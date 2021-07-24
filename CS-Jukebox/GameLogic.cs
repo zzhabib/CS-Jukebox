@@ -51,6 +51,7 @@ namespace CS_Jukebox
             {
                 musicState = MusicState.Menu;
                 playerMVPs = 0;
+                jukebox.PlaySong(Properties.SelectedKit.mainMenuSong, true);
                 Console.WriteLine("Main Menu");
             }
 

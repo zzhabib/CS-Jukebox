@@ -19,6 +19,7 @@ namespace CS_Jukebox
         public SongProfile MVPSong { get; set; }
         public SongProfile bombTenSecSong { get; set; }
         public SongProfile roundTenSecSong { get; set; }
+        public SongProfile mainMenuSong { get; set; }
 
         public MusicKit(string name)
         {
@@ -32,6 +33,7 @@ namespace CS_Jukebox
             MVPSong = new SongProfile();
             bombTenSecSong = new SongProfile();
             roundTenSecSong = new SongProfile();
+            mainMenuSong = new SongProfile();
         }
     }
 }

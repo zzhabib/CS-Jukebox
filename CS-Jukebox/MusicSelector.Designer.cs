@@ -83,6 +83,12 @@ namespace CS_Jukebox
             this.roundTenSecTrackBar = new System.Windows.Forms.TrackBar();
             this.roundTenSecButton = new System.Windows.Forms.Button();
             this.roundTenSecTextBox = new System.Windows.Forms.TextBox();
+            this.mainMenuGroupBox = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.menuStartTextBox = new System.Windows.Forms.TextBox();
+            this.menuTrackBar = new System.Windows.Forms.TrackBar();
+            this.menuButton = new System.Windows.Forms.Button();
+            this.menuTextBox = new System.Windows.Forms.TextBox();
             this.freezeGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.freezeTrackBar)).BeginInit();
             this.startGroup.SuspendLayout();
@@ -99,6 +105,8 @@ namespace CS_Jukebox
             ((System.ComponentModel.ISupportInitialize)(this.bombTenSecTrackBar)).BeginInit();
             this.roundTenSecBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.roundTenSecTrackBar)).BeginInit();
+            this.mainMenuGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.menuTrackBar)).BeginInit();
             this.SuspendLayout();
             // 
             // freezeButton
@@ -523,7 +531,7 @@ namespace CS_Jukebox
             // saveButton
             // 
             this.saveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.saveButton.Location = new System.Drawing.Point(12, 434);
+            this.saveButton.Location = new System.Drawing.Point(12, 497);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(75, 23);
             this.saveButton.TabIndex = 11;
@@ -534,7 +542,7 @@ namespace CS_Jukebox
             // cancelButton
             // 
             this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.cancelButton.Location = new System.Drawing.Point(413, 434);
+            this.cancelButton.Location = new System.Drawing.Point(413, 497);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
             this.cancelButton.TabIndex = 12;
@@ -694,11 +702,80 @@ namespace CS_Jukebox
             this.roundTenSecTextBox.Size = new System.Drawing.Size(131, 23);
             this.roundTenSecTextBox.TabIndex = 2;
             // 
+            // mainMenuGroupBox
+            // 
+            this.mainMenuGroupBox.Controls.Add(this.label10);
+            this.mainMenuGroupBox.Controls.Add(this.menuStartTextBox);
+            this.mainMenuGroupBox.Controls.Add(this.menuTrackBar);
+            this.mainMenuGroupBox.Controls.Add(this.menuButton);
+            this.mainMenuGroupBox.Controls.Add(this.menuTextBox);
+            this.mainMenuGroupBox.Location = new System.Drawing.Point(134, 433);
+            this.mainMenuGroupBox.Name = "mainMenuGroupBox";
+            this.mainMenuGroupBox.Size = new System.Drawing.Size(235, 90);
+            this.mainMenuGroupBox.TabIndex = 17;
+            this.mainMenuGroupBox.TabStop = false;
+            this.mainMenuGroupBox.Text = "Main Menu:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(6, 19);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(49, 15);
+            this.label10.TabIndex = 6;
+            this.label10.Text = "Start At:";
+            // 
+            // menuStartTextBox
+            // 
+            this.menuStartTextBox.Location = new System.Drawing.Point(61, 16);
+            this.menuStartTextBox.Name = "menuStartTextBox";
+            this.menuStartTextBox.PlaceholderText = "Seconds";
+            this.menuStartTextBox.Size = new System.Drawing.Size(55, 23);
+            this.menuStartTextBox.TabIndex = 5;
+            this.menuStartTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.menuStartTextBox_KeyPress);
+            // 
+            // menuTrackBar
+            // 
+            this.menuTrackBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.menuTrackBar.AutoSize = false;
+            this.menuTrackBar.LargeChange = 10;
+            this.menuTrackBar.Location = new System.Drawing.Point(6, 37);
+            this.menuTrackBar.Maximum = 100;
+            this.menuTrackBar.Name = "menuTrackBar";
+            this.menuTrackBar.Size = new System.Drawing.Size(223, 24);
+            this.menuTrackBar.SmallChange = 5;
+            this.menuTrackBar.TabIndex = 3;
+            this.menuTrackBar.Tag = "";
+            this.menuTrackBar.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.menuTrackBar.Value = 100;
+            // 
+            // menuButton
+            // 
+            this.menuButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.menuButton.Location = new System.Drawing.Point(6, 61);
+            this.menuButton.Name = "menuButton";
+            this.menuButton.Size = new System.Drawing.Size(75, 23);
+            this.menuButton.TabIndex = 1;
+            this.menuButton.Text = "Browse";
+            this.menuButton.UseVisualStyleBackColor = true;
+            this.menuButton.Click += new System.EventHandler(this.menuButton_Click);
+            // 
+            // menuTextBox
+            // 
+            this.menuTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.menuTextBox.Location = new System.Drawing.Point(98, 61);
+            this.menuTextBox.Name = "menuTextBox";
+            this.menuTextBox.Size = new System.Drawing.Size(131, 23);
+            this.menuTextBox.TabIndex = 2;
+            this.menuTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // MusicSelector
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(500, 463);
+            this.ClientSize = new System.Drawing.Size(500, 526);
+            this.Controls.Add(this.mainMenuGroupBox);
             this.Controls.Add(this.roundTenSecBox);
             this.Controls.Add(this.bombTenSecBox1);
             this.Controls.Add(this.MVPGroup);
@@ -739,6 +816,9 @@ namespace CS_Jukebox
             this.roundTenSecBox.ResumeLayout(false);
             this.roundTenSecBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.roundTenSecTrackBar)).EndInit();
+            this.mainMenuGroupBox.ResumeLayout(false);
+            this.mainMenuGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.menuTrackBar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -799,5 +879,11 @@ namespace CS_Jukebox
         private System.Windows.Forms.TrackBar roundTenSecTrackBar;
         private System.Windows.Forms.Button roundTenSecButton;
         private System.Windows.Forms.TextBox roundTenSecTextBox;
+        private System.Windows.Forms.GroupBox mainMenuGroupBox;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox menuStartTextBox;
+        private System.Windows.Forms.TrackBar menuTrackBar;
+        private System.Windows.Forms.Button menuButton;
+        private System.Windows.Forms.TextBox menuTextBox;
     }
 }
