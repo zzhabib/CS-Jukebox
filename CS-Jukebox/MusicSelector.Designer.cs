@@ -29,6 +29,7 @@ namespace CS_Jukebox
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MusicSelector));
             this.freezeButton = new System.Windows.Forms.Button();
             this.freezeTextBox = new System.Windows.Forms.TextBox();
             this.freezeGroup = new System.Windows.Forms.GroupBox();
@@ -790,6 +791,7 @@ namespace CS_Jukebox
             this.Controls.Add(this.nameTextBox);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MusicSelector";
             this.Text = "Music Selector";
             this.Load += new System.EventHandler(this.MusicSelector_Load);

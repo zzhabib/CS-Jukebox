@@ -29,6 +29,7 @@ namespace CS_Jukebox
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GamePathForm));
             this.label1 = new System.Windows.Forms.Label();
             this.dirTextBox = new System.Windows.Forms.TextBox();
             this.browseButton = new System.Windows.Forms.Button();
@@ -98,6 +99,7 @@ namespace CS_Jukebox
             this.Controls.Add(this.dirTextBox);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "GamePathForm";
             this.Text = "Select Game Directory";
             this.ResumeLayout(false);

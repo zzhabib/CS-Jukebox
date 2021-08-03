@@ -6,6 +6,7 @@
     <RootNamespace>CS_Jukebox</RootNamespace>
     <UseWindowsForms>true</UseWindowsForms>
     <StartupObject>CS_Jukebox.Program</StartupObject>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
