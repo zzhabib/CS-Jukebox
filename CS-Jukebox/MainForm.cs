@@ -1,16 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.IO;
-using CSGSI;
-using CSGSI.Nodes;
 using System.Runtime.InteropServices;
+using System.Windows.Forms;
 
 namespace CS_Jukebox
 {
@@ -126,7 +116,7 @@ namespace CS_Jukebox
             }
         }
 
-        private void notifyIcon_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void notifyIcon_MouseClick(object sender, MouseEventArgs e)
         {
             Show();
             WindowState = FormWindowState.Normal;
