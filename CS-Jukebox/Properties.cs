@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Runtime.Serialization;
+using System.Windows.Forms;
 using Newtonsoft.Json;
 
 namespace CS_Jukebox
@@ -67,7 +68,9 @@ namespace CS_Jukebox
         //Reads properties file then deserializes it
         public static void LoadProperties()
         {
-            startDir = Directory.GetCurrentDirectory();
+            //startDir = Directory.GetCurrentDirectory();
+            startDir = GetAppDirectory();
+            Console.WriteLine("App Directory: " + startDir);
             string dir = startDir + PropertiesFilePath;
             PropertiesFile propFile;
 
@@ -83,6 +86,20 @@ namespace CS_Jukebox
             {
                 propFile = new PropertiesFile();
             }
+        }
+
+        private static string GetAppDirectory()
+        {
+            string[] execPath = Application.ExecutablePath.Split('\\');
+            string appDir = "";
+
+            for (int i = 0; i < execPath.Length - 1; i++)
+            {
+                appDir += execPath[i];
+                if (i < execPath.Length - 2) appDir += "\\";
+            }
+
+            return appDir;
         }
 
         //Copies the config from local folder to CS:GO cfg folder

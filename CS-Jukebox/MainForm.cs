@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using Microsoft.Win32;
 
 namespace CS_Jukebox
 {
@@ -28,6 +29,8 @@ namespace CS_Jukebox
                 dirPopup.Location = this.Location;
                 dirPopup.ShowDialog(this);
             }
+
+            CheckAutoStart();
             Start();
         }
 
@@ -62,6 +65,28 @@ namespace CS_Jukebox
 
             if (Properties.SelectedKit != null)
                 musicComboBox.SelectedIndex = Properties.MusicKits.IndexOf(Properties.SelectedKit);
+        }
+
+        private void CheckAutoStart()
+        {
+            RegistryKey registryKey = Registry.CurrentUser.OpenSubKey
+                    ("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+            bool autoStart = registryKey.GetValue("CS-Jukebox") != null;
+            autoCheckBox.Checked = autoStart;
+        }
+
+        private void RegisterInStartup(bool isChecked)
+        {
+            RegistryKey registryKey = Registry.CurrentUser.OpenSubKey
+                    ("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+            if (isChecked)
+            {
+                registryKey.SetValue("CS-Jukebox", Application.ExecutablePath);
+            }
+            else
+            {
+                registryKey.DeleteValue("CS-Jukebox");
+            }
         }
 
         private void trackBar1_Scroll(object sender, EventArgs e)
@@ -121,6 +146,11 @@ namespace CS_Jukebox
             Show();
             WindowState = FormWindowState.Normal;
             notifyIcon.Visible = false;
+        }
+
+        private void autoCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            RegisterInStartup(autoCheckBox.Checked);
         }
     }
 }

@@ -38,6 +38,7 @@ namespace CS_Jukebox
             this.directoryButton = new System.Windows.Forms.Button();
             this.editButton = new System.Windows.Forms.Button();
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.autoCheckBox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,7 +81,7 @@ namespace CS_Jukebox
             // 
             // directoryButton
             // 
-            this.directoryButton.Location = new System.Drawing.Point(12, 100);
+            this.directoryButton.Location = new System.Drawing.Point(12, 103);
             this.directoryButton.Name = "directoryButton";
             this.directoryButton.Size = new System.Drawing.Size(121, 23);
             this.directoryButton.TabIndex = 5;
@@ -106,11 +107,23 @@ namespace CS_Jukebox
             this.notifyIcon.Text = "CS Jukebox";
             this.notifyIcon.MouseClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseClick);
             // 
+            // autoCheckBox
+            // 
+            this.autoCheckBox.AutoSize = true;
+            this.autoCheckBox.Location = new System.Drawing.Point(139, 107);
+            this.autoCheckBox.Name = "autoCheckBox";
+            this.autoCheckBox.Size = new System.Drawing.Size(138, 19);
+            this.autoCheckBox.TabIndex = 7;
+            this.autoCheckBox.Text = "Autostart CS Jukebox";
+            this.autoCheckBox.UseVisualStyleBackColor = true;
+            this.autoCheckBox.CheckedChanged += new System.EventHandler(this.autoCheckBox_CheckedChanged);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(285, 135);
+            this.Controls.Add(this.autoCheckBox);
             this.Controls.Add(this.editButton);
             this.Controls.Add(this.directoryButton);
             this.Controls.Add(this.addButton);
@@ -124,6 +137,7 @@ namespace CS_Jukebox
             this.Resize += new System.EventHandler(this.MainForm_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -135,6 +149,7 @@ namespace CS_Jukebox
         private System.Windows.Forms.Button directoryButton;
         private System.Windows.Forms.Button editButton;
         private System.Windows.Forms.NotifyIcon notifyIcon;
+        private System.Windows.Forms.CheckBox autoCheckBox;
     }
 }
 
