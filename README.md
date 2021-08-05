@@ -1,13 +1,15 @@
 # CS-Jukebox
 Introducing CS-Jukebox, a tool that allows you to play your own custom music kits in Counter-Strike: Global Offensive!
 
-![image](https://user-images.githubusercontent.com/26579319/126086799-31e2da1a-1521-45fe-8b55-1325e49fafd8.png)
+![CS-Jukebox-icon](https://user-images.githubusercontent.com/26579319/128274699-44ebd07c-d0ee-4fd5-8532-06ec8ca8f082.png)
+![image](https://user-images.githubusercontent.com/26579319/128274959-d2ada5f1-ac48-4d88-b7c0-4cf9a42ea790.png)
 
 # Getting Started
-1. Download the latest Pre-Release [here](https://github.com/KingHabib/CS-Jukebox/releases/download/v0.1-alpha/CS-Jukebox.v0.1.zip) (Windows only).
+1. [Download the latest release](https://github.com/KingHabib/CS-Jukebox/releases/download/v1.0/CS.Jukebox.v1.0.zip) (Windows only).
 2. Extract the folder inside the zip.
 3. Launch CS-Jukebox.exe
 4. Jukebox will ask you to locate the root folder for CS:GO. This is the folder containing csgo.exe
+5. If CS:GO is open, it must be restarted for Jukebox to work.
 
 # How to create kits
 Creating a music kit can be easily done inside CS-Jukebox
