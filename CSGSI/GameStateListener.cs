@@ -153,6 +153,10 @@ namespace CSGSI
                 // Listener was Closed due to call of Stop();
                 return;
             }
+            catch (HttpListenerException)
+            {
+                return;
+            }
             finally
             {
                 _waitForConnection.Set();
