@@ -30,17 +30,25 @@ namespace CS_Jukebox
 
         void StartGameListener()
         {
-            gsl = new GameStateListener(3000);
+            gsl = new GameStateListener(3010);
             gsl.NewGameState += new NewGameStateHandler(OnNewGameState);
 
             if (!gsl.Start())
             {
                 Console.WriteLine("Game State Listener failed to start.");
+                MessageBox.Show("Game State Listener failed to start. A restart may be required.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Environment.Exit(1);
             }
             else
             {
                 Console.WriteLine("Listening...");
             }
+        }
+
+        public void Stop()
+        {
+            Console.WriteLine("Stopping Game Listener");
+            gsl.Stop();
         }
 
         void OnNewGameState(GameState gs)

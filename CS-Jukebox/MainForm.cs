@@ -16,7 +16,7 @@ namespace CS_Jukebox
         public MainForm()
         {
             InitializeComponent();
-            //AllocConsole(); //Enable console
+            AllocConsole(); //Enable console
             MaximizeBox = false;
 
             Properties.Load();
@@ -121,6 +121,7 @@ namespace CS_Jukebox
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
+            logic.Stop();
             Properties.Save();
         }
 
