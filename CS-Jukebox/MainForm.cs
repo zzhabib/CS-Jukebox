@@ -16,7 +16,7 @@ namespace CS_Jukebox
         public MainForm()
         {
             InitializeComponent();
-            AllocConsole(); //Enable console
+            //AllocConsole(); //Enable console
             MaximizeBox = false;
 
             Properties.Load();
