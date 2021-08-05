@@ -30,7 +30,7 @@ namespace CS_Jukebox
 
         void StartGameListener()
         {
-            gsl = new GameStateListener(3000);
+            gsl = new GameStateListener(3010);
             gsl.NewGameState += new NewGameStateHandler(OnNewGameState);
 
             if (!gsl.Start())
