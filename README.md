@@ -1,7 +1,7 @@
 # CS-Jukebox
 Introducing CS-Jukebox, a tool that allows you to play your own custom music kits in Counter-Strike: Global Offensive!
 
-![CS-Jukebox-icon](https://user-images.githubusercontent.com/26579319/128274699-44ebd07c-d0ee-4fd5-8532-06ec8ca8f082.png)
+[![CS Jukebox Trailer](https://img.youtube.com/vi/s9UX5aizHTY/0.jpg)](https://www.youtube.com/watch?v=s9UX5aizHTY)
 ![image](https://user-images.githubusercontent.com/26579319/128274959-d2ada5f1-ac48-4d88-b7c0-4cf9a42ea790.png)
 
 # Getting Started
