@@ -34,7 +34,7 @@ namespace CS_Jukebox
         //Check if the directory is a valid CSGO install
         private bool CheckDir(string path)
         {
-            return true;
+            return File.Exists(path + @"\core");
         }
 
         //Saves the directory if it is valid.

@@ -45,7 +45,7 @@ namespace CS_Jukebox
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(288, 15);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Select root folder for Counter-Strike: Global Offensive";
+            this.label1.Text = "Select root folder for CS2";
             // 
             // dirTextBox
             // 
@@ -84,7 +84,7 @@ namespace CS_Jukebox
             this.errorLabel.Name = "errorLabel";
             this.errorLabel.Size = new System.Drawing.Size(161, 15);
             this.errorLabel.TabIndex = 4;
-            this.errorLabel.Text = "Error: Invalid CS:GO Directory";
+            this.errorLabel.Text = "Error: Invalid CS2 Directory (Should be Counter-Strike Global Offensive\game)";
             this.errorLabel.UseWaitCursor = true;
             this.errorLabel.Visible = false;
             // 
