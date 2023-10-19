@@ -84,7 +84,7 @@ namespace CS_Jukebox
             this.errorLabel.Name = "errorLabel";
             this.errorLabel.Size = new System.Drawing.Size(161, 15);
             this.errorLabel.TabIndex = 4;
-            this.errorLabel.Text = "Error: Invalid CS2 Directory (Should be Counter-Strike Global Offensive\game)";
+            this.errorLabel.Text = "Error: Invalid CS2 Directory (game folder)";
             this.errorLabel.UseWaitCursor = true;
             this.errorLabel.Visible = false;
             // 
