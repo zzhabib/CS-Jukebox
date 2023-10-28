@@ -90,9 +90,11 @@ namespace CS_Jukebox
 
             if (gs.Round.Phase == RoundPhase.Live && musicState != MusicState.Live && musicState != MusicState.BombPlanted)
             {
+                jukebox.Stop();
                 musicState = MusicState.Live;
                 jukebox.PlaySong(Properties.SelectedKit.startSong, false, 8);
                 Console.WriteLine("Round Begun");
+
             }
 
             if (gs.Round.Phase == RoundPhase.Over && musicState != MusicState.Over)

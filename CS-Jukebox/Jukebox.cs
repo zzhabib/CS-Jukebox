@@ -74,11 +74,11 @@ namespace CS_Jukebox
 
         private void StopSong()
         {
-            int fadeTime = 2;
+            float fadeTime = 1f;
             float startVolume = player.settings.volume;
             fadeVolume = startVolume;
             volumeIncrement = startVolume / ((1000 / 8) * fadeTime);
-            
+
             timerCount = 0;
 
             fadeTimer = new Timer();
@@ -127,7 +127,7 @@ namespace CS_Jukebox
             }
 
             //Check if csgo is focused
-            if (WinAPI.GetActiveProcess() == "csgo")
+            if (WinAPI.GetActiveProcess() == "cs2")
             {
                 active = 1;
             }
