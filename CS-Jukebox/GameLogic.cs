@@ -92,7 +92,7 @@ namespace CS_Jukebox
             {
                 jukebox.Stop();
                 musicState = MusicState.Live;
-                jukebox.PlaySong(Properties.SelectedKit.startSong, false, 8);
+                jukebox.PlaySong(Properties.SelectedKit.startSong, false);
                 Console.WriteLine("Round Begun");
 
             }
